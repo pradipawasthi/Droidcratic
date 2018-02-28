@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable name="vm" type="org.socratic.android.contract.InvitationsContract.ViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/invitations"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/snapCode"
+            android:layout_width="match_parent"
+            android:layout_height="233dp">
+
+            <ImageView
+                android:id="@+id/snapCodeImageView"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:paddingTop="10dp"
+                android:layout_marginTop="11dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/invite_snapcode" />
+
+            <TextView
+                android:id="@+id/shareSocraticTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="11dp"
+                android:text="@string/share_socratic"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                fontPath="fonts/cerapro-bold.otf" />
+
+            <TextView
+                android:id="@+id/shareSnapCodeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:padding="3dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:textSize="15sp"
+                fontPath="fonts/cerapro-regular.otf"
+                android:text="@string/scan_snapcode"
+                android:textColor="@color/share_snap_code" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/copyLink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/copyLinkImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="11dp"
+                app:srcCompat="@drawable/invite_copy_link" />
+
+            <TextView
+                android:id="@+id/copyLinkTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="14dp"
+                fontPath="fonts/cerapro-bold.otf"
+                android:text="@string/copy_link"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/copyLinkCopyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="3dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="75dp"
+                fontPath="fonts/cerapro-regular.otf"
+                android:text="@string/copy_link_copy"
+                android:textColor="@color/whiteTransparentText"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/copyLinkNavIco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                app:srcCompat="@drawable/disclosure_arrow_purple" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/facebookMessenger"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/facebookMessengerImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginLeft="25dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/invite_messenger" />
+
+            <TextView
+                android:id="@+id/facebookMessengerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="14dp"
+                fontPath="fonts/cerapro-bold.otf"
+                android:text="@string/facebook_messenger"
+                android:layout_gravity="left"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/facebookMessengerCopyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="3dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="5dp"
+                fontPath="fonts/cerapro-regular.otf"
+                android:text="@string/facebook_messenger_copy"
+                android:textColor="@color/whiteTransparentText"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/messengerNavIco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                app:srcCompat="@drawable/disclosure_arrow_blue" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/whiteTransparent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/messages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/messageImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginLeft="25dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/invite_message" />
+
+            <TextView
+                android:id="@+id/messagesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="14dp"
+                fontPath="fonts/cerapro-bold.otf"
+                android:text="@string/messages"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/messagesCopyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="3dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="5dp"
+                fontPath="fonts/cerapro-regular.otf"
+                android:text="@string/messages_copy"
+                android:textColor="@color/whiteTransparentText"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/messagesNavIco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                app:srcCompat="@drawable/disclosure_arrow_green" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/whiteTransparent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/moreImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginLeft="25dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/invite_more" />
+
+            <TextView
+                android:id="@+id/moreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="14dp"
+                fontPath="fonts/cerapro-bold.otf"
+                android:text="@string/more"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/moreCopyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:padding="3dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="75dp"
+                android:layout_marginBottom="5dp"
+                fontPath="fonts/cerapro-regular.otf"
+                android:text="@string/more_copy"
+                android:textColor="@color/whiteTransparentText"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/moreNavIco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                app:srcCompat="@drawable/disclosure_arrow_red" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/whiteTransparent" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Socratic</string>
+    <string name="searching">Buscando</string>
+    <string name="socratic_needs_camera">Socratic necesita permiso de cámara para trabajar</string>
+    <string name="search">Buscar</string>
+    <string name="search_again">Busca de nuevo</string>    
+    <string name="socratic_reads_your_question">Socratic lee su pregunta y le muestra varias maneras de aprender</string>
+    <string name="we_need_camera_access">Necesitamos acceso a la cámara</string>
+    <string name="socratic_needs_camera_access">Socratic necesita acceso a la cámara para ayudar con la tarea!</string>
+    <string name="enable_camera">Activa la cámara</string>
+    <string name="answer">Respuesta</string>
+    <string name="how_do_you_like_socratic">¿Te gusta Socratic?</string>
+    <string name="image_upload_failed">¡Error al cargar la imagen!</string>
+    <string name="internet_connection_required">Se necesita conexión a Internet</string>
+    <string name="no_thanks">No, gracias</string>
+    <string name="rate_us_please">Evalúanos en Google Play (¡por favor!)</string>
+    <string name="rating_feedback_what_could_we_do">¿Cómo podemos mejorar la aplicación? ¡Leemos todos los comentarios!</string>
+    <string name="source">Fuente</string>
+    <string name="sure">Seguro</string>
+    <string name="thanks">¡Gracias!</string>
+    <string name="we_couldnt_complete_this_search">No pudimos completar esta búsqueda. Inténtalo nuevamente más tarde.</string>
+    <string name="write_feedback">Escribe tu comentario aquí...</string>
+    <string name="type_your_question">Escribe tu pregunta</string>
+    <string name="see_example">Mira un ejemplo</string>
+    <string name="swipe_to_type">Desliza el dedo para escribir</string>
+
+    <string name="crop_msg">Recortar solo una pregunta</string>
+    <string name="take_picture_with_question">Saca una foto de una pregunta para hallar respuestas.</string>
+    <string name="try_subjects">¡Prueba con preguntas de matemáticas, ciencias e historia!</string>
+    <string name="crop_one_question_at_a_time">Recortar una pregunta a la vez</string>
+
+    <string name="accurate_answers">¡Eso te dará los mejores resultados!</string>
+    <string name="got_it">Bien</string>
+
+    <string name="share_socratic">Compartir Socratic</string>
+    <string name="scan_snapcode">Escanea este código en Snapchat para descargar Socratic.</string>
+    <string name="copy_link">Copiar enlace</string>
+    <string name="copy_link_copy">¡Comparte donde quieras!</string>
+    <string name="link_copied_to_clipboard">¡El enlace se ha copiado al portapapeles!</string>
+    <string name="facebook_messenger">Messenger de Facebook</string>
+    <string name="facebook_messenger_copy">Invita a todos tus amigos de Facebook</string>
+    <string name="messages">Mensajes</string>
+    <string name="messages_copy">Enviar a tus personas favoritas</string>
+    <string name="more">Más</string>
+    <string name="more_copy">Más formas de compartir</string>
+    <string name="share_message_copy">Esta aplicación te brinda respuestas instantáneas para tareas de todas las materias. 🙏  💯 Consíguela aquí: </string>
+
+    <string name="camera">Cámara</string>
+    <string name="add_friends">AÑADE AMIGOS</string>
+
+    <!-- Native Math Card -->
+    <string name="header_solution">Solución</string>
+
+    <!-- Settings -->
+    <string name="settings">Configuración</string>
+    <string name="acknowledgements">Reconocimientos</string>
+    <string name="licenses">Licencias</string>
+</resources>

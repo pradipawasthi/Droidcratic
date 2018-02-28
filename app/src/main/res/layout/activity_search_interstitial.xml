@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="vm" type="org.socratic.android.contract.SearchInterstitialContract.ViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context="org.socratic.android.activities.SearchInterstitialActivity">
+
+        <ImageView
+            android:id="@+id/graphic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/first_time_interstitial_cards"
+            android:scaleType="centerCrop"
+            android:layout_below="@id/title" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/socratic_reads_your_question"
+            android:textSize="28sp"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp" />
+
+        <org.socratic.android.views.ForegroundLinearLayout
+            style="@style/ThemeCancelSearchButton"
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="46dp"
+            android:paddingRight="46dp"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="23dp"
+                android:src="@drawable/first_time_interstitial_arrow"/>
+        </org.socratic.android.views.ForegroundLinearLayout>
+
+    </RelativeLayout>
+</layout>

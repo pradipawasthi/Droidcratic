@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/oops_copy"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:textColor="@color/purpleStandard"
+        android:text="Oops! Something went wrong."
+        android:layout_gravity="center_horizontal"
+        fontPath="fonts/cerapro-bold.otf" />
+
+    <TextView
+        android:id="@+id/internet_connection_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Check your internet"
+        android:layout_gravity="center_horizontal"
+        fontPath="fonts/cerapro-bold.otf" />
+
+    <TextView
+        android:id="@+id/internet_connection_copy2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="connection and try again"
+        android:layout_gravity="center_horizontal"
+        fontPath="fonts/cerapro-bold.otf" />
+
+    <Button
+        android:id="@+id/ok_btn"
+        android:background="@drawable/ok_btn"
+        android:layout_width="80dp"
+        android:layout_height="55dp"
+        android:text="ok"
+        android:textSize="22sp"
+        android:textColor="#ffff"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_horizontal"
+        fontPath="fonts/cerapro-bold.otf" />
+
+</LinearLayout>

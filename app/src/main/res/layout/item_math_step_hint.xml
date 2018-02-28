@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_content_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <org.socratic.android.views.ExpandableLayoutView
+        android:id="@+id/ev_hint_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mathCardHintBackgroundColor">
+
+        <LinearLayout
+            android:id="@+id/ll_hint_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+    </org.socratic.android.views.ExpandableLayoutView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_default_content"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp">
+
+
+        <org.socratic.android.views.CircleBadgeTextView
+            android:id="@+id/cv_badge"
+            android:layout_width="@dimen/item_math_step_badge_width"
+            android:layout_height="@dimen/item_math_step_badge_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/item_math_step_margin_left"
+            android:background="@color/mathStepBadgeBackgroundColor"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textColor="@color/mathCardBadgeTextColor"
+            android:textSize="@dimen/item_math_step_badge_text_sz"
+            android:textStyle="bold"
+            app:mbtv_border_color="@color/mathStepBadgeBorderColor" />
+
+        <org.socratic.android.views.JLatexView
+            android:id="@+id/lv_latex"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/item_math_step_margin_left"
+            android:layout_toRightOf="@id/cv_badge" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/item_hint"
+            android:textColor="@color/mathStepHintTextColor"
+            android:textSize="@dimen/item_math_step_hint_txt_sz"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_collapse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/item_math_step_margin_left"
+            android:background="@drawable/mathstepper_collapse_ico_active"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+</LinearLayout>

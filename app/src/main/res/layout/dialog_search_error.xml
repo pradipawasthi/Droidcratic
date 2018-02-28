@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/error_dialog_background"
+    android:gravity="center_horizontal"
+    android:padding="32dp">
+
+    <ImageView
+        android:layout_width="162dp"
+        android:layout_height="97dp"
+        android:src="@drawable/error_modal_fish"
+        android:layout_marginBottom="@dimen/padding_large"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        style="@style/BoldFont"
+        />
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        />
+
+    <org.socratic.android.views.ForegroundLinearLayout
+        style="@style/ThemeStrongButtonGrey"
+        android:id="@+id/btn_search_again"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp">
+
+        <TextView
+            style="@style/BoldFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:paddingLeft="34dp"
+            android:paddingRight="34dp"
+            android:text="@string/search_again"
+            android:textSize="20sp" />
+    </org.socratic.android.views.ForegroundLinearLayout>
+
+</LinearLayout>

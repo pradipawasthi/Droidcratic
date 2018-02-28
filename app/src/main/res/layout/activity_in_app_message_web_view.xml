@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/in_app_message_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </WebView>
+        <ImageButton
+            android:id="@+id/in_app_message_web_view_close_button"
+            android:layout_width="wrap_content"
+            android:background="@null"
+            android:padding="15dp"
+            android:layout_height="100sp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/web_close_ico" />
+    </RelativeLayout>
+</layout>

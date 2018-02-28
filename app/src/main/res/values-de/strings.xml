@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Socratic</string>
+    <string name="searching">Suche läuft</string>
+    <string name="socratic_needs_camera">Socratic benötigt die Erlaubnis zum Zugriff auf die Kamera, um zu funktionieren</string>
+    <string name="search">Suchen</string>
+    <string name="search_again">Erneut suchen</string>
+    <string name="socratic_reads_your_question">Socratic liest deine Frage und zeigt dir mehrere Wege zum Lernen</string>
+    <string name="we_need_camera_access">Wir benötigen den Zugriff auf die Kamera</string>
+    <string name="socratic_needs_camera_access">Socratic benötigt den Zugriff auf die Kamera, um bei den Hausaufgaben zu helfen!</string>
+    <string name="enable_camera">Kamera aktivieren</string>
+    <string name="answer">Antwort</string>
+    <string name="how_do_you_like_socratic">Wie gefällt Ihnen Socratic?</string>
+    <string name="image_upload_failed">Hochladen des Bildes gescheitert!</string>
+    <string name="internet_connection_required">Internetverbindung erforderlich</string>
+    <string name="no_thanks">Nein danke</string>
+    <string name="rate_us_please">Bewerten Sie uns bei Google Play? (Bitte!)</string>
+    <string name="rating_feedback_what_could_we_do">Was könnte an der App verbessert werden? Wir lesen jede einzelne Anregung!</string>
+    <string name="source">Quelle</string>
+    <string name="sure">Natürlich</string>
+    <string name="thanks">Danke!</string>
+    <string name="we_couldnt_complete_this_search">Wir konnten diese Suche nicht für Sie durchführen. Bitte versuchen Sie es später erneut.</string>
+    <string name="write_feedback">Schreiben Sie hier Ihr Feedback ...</string>
+    <string name="type_your_question">Tippe deine Frage ein</string>
+    <string name="see_example">Ein Beispiel ansehen</string>
+    <string name="swipe_to_type">Wische, um stattdessen die Tastatur zu nutzen</string>
+
+    <string name="crop_msg">Schneide nur eine Frage ab</string>
+    <string name="take_picture_with_question">Mache ein Foto von einer Frage, um Antworten zu finden</string>
+    <string name="try_subjects">Probiere Mathematik-, Wissenschafts- und Geschichtsfragen aus!</string>
+    <string name="crop_one_question_at_a_time">Schneide ein Frage nach der anderen</string>
+
+    <string name="accurate_answers">So bekommst du die besten Ergebnisse!</string>
+    <string name="got_it">Okay</string>
+
+    <string name="share_socratic">Teile Socratic</string>
+    <string name="scan_snapcode">Für einfachen Download den Code oben scannen</string>
+    <string name="copy_link">Link kopieren</string>
+    <string name="copy_link_copy">Überall teilen, wo du willst!</string>
+    <string name="link_copied_to_clipboard">Link in die Zwischenablage kopiert!</string>
+    <string name="facebook_messenger">Facebook Messenger</string>
+    <string name="facebook_messenger_copy">Lade alle deine Facebook-Freunde ein</string>
+    <string name="messages">Nachrichten</string>
+    <string name="messages_copy">An die Leute schicken, die dir wichtig sind</string>
+    <string name="more">Mehr</string>
+    <string name="more_copy">Mehr Arten zu teilen</string>
+    <string name="share_message_copy">Diese App gibt dir in allen Fächern sofort Antworten zu deinen Hausaufgaben. 🙏  💯  Hol dir die App hier: </string>
+
+    <string name="camera">Kamera</string>
+    <string name="add_friends">ADICIONAR AMIGOS</string>
+
+    <!-- Native Math Card -->
+    <string name="header_solution">Lösung</string>
+
+    <!-- Settings -->
+    <string name="settings">Einstellungen</string>
+    <string name="acknowledgements">Bestätigungen</string>
+    <string name="licenses">Lizenzen</string>
+</resources>

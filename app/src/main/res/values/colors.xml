@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#FFFFFFFF</color>
+    <color name="semi_transparent">#33FFFFFF</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">@color/background</color>
+    <color name="colorAccent">#618cc8</color>
+
+    <color name="background">#372d57</color>
+    <color name="white">#ffffff</color>
+
+    <color name="crop_widget_alpha_outside">#66676767</color>
+    <color name="crop_widget_alpha_inside">#33b55bea</color>
+
+    <color name="purpleStandard">#7A2CCE</color>
+    <color name="greyMessageInfo">#E1E1E1</color>
+    <color name="greenMessageSuccess">#61a117</color>
+    <color name="yellowMessageWarning">#eebd22</color>
+    <color name="redMessageError">#f9422f</color>
+    <color name="redDialog">#FF4949</color>
+    <color name="purpleCameraOverlay">#3D2C52</color>
+    <color name="purpleRatingBackground">#833be4</color>
+    <color name="purpleChannelFeed">#7113CE</color>
+    <color name="purpleCameraButtonTint">#7A2CCE</color>
+    <color name="lightPinkBubbleMessageIncomming">#F6D9D9</color>
+    <color name="lightPurpleIncomming">#A458EC</color>
+    <color name="lightPurpleBackground">#F6ECEC</color>
+    <color name="lightPurpleNavbarBackground">#D9C2E4</color>
+    <color name="softPurpleNavbarText">#B991DC</color>
+    <color name="purpleDotUnselected">#635976</color>
+    <color name="purpleStarLight">#a876ec</color>
+
+    <color name="purple_btn_color_on">#30263e</color>
+    <color name="purple_btn_color_off">#833be4</color>
+    <color name="purple_btn_color_disabled">#6e627e</color>
+    <color name="strong_ripple_color">#55000000</color>
+    <color name="cancel_search_color_off">#4D000000</color>
+    <color name="cancel_search_color_on">#99000000</color>
+    <color name="search_progress_spinner_color">#FF833be4</color>
+    <color name="error_dialog_bg_color">#686e6b</color>
+    <color name="grey_btn_color_off">#4D000000</color>
+    <color name="grey_btn_color_on">#73000000</color>
+    <color name="web_card_font_color">#333333</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="onboarding_bg">#f8f9fb</color>
+    <color name="inactive_grey">#B1B1B3</color>
+    <color name="inactive_blue">#2384ff</color>
+
+    <color name="confetti_blue">#2d7ddc</color>
+    <color name="confetti_orange">#f68809</color>
+    <color name="confetti_yellow">#f0ce3b</color>
+    <color name="confetti_green">#50e3c2</color>
+    <color name="confetti_red">#ff5043</color>
+
+    <color name="cropDialog">#57333333</color>
+    <color name="cameraOnboardingTip">#55282c33</color>
+    <color name="dropShadow">#40000000</color>
+
+    <color name="mathStepBadgeBorderColor">#44000000</color>
+    <color name="mathStepBadgeBackgroundColor">#11000000</color>
+    <color name="mathStepHintTextColor">#44000000</color>
+    <color name="mathCardBackgroundColor">#1479F1</color>
+    <color name="mathCardExpandedBackgroundColor">#331479F1</color>
+    <color name="mathCardHintBackgroundColor">#1455a1</color>
+    <color name="mathCardBadgeTextColor">#13519a</color>
+
+    <color name="translucent_black">#99000000</color>
+    <color name="invitations">#b3000000</color>
+    <color name="snapCode">#32000000</color>
+    <color name="share_snap_code">#99ac80c5</color>
+    <color name="whiteTransparent">#19ffffff</color>
+    <color name="whiteTransparentText">#7fffffff</color>
+    <color name="facebookMessenger">#00baff</color>
+    <color name="copyLink">#823be5</color>
+    <color name="messages">#4edb66</color>
+    <color name="more">#f55757</color>
+
+    <color name="chat">#333333</color>
+    <color name="inviteFriendsCopy">#8c333333</color>
+    <color name="chatSmall">#007aff</color>
+    <color name="chatBackground">#0d333333</color>
+    <color name="inviteFriendsBtn">#9100ff</color>
+    <color name="connectedContactsBackground">#f8f9fb</color>
+
+    <color name="noMessagesCopy">#acadad</color>
+
+    <color name="chatBackgroundColor">#f8f9fb</color>
+    <color name="outgoingChatBubbleColor">#9100ff</color>
+    <color name="outgoingChatBubbleTextColor">#ffffff</color>
+
+    <color name="incomingChatBubbleColor">#ffffff</color>
+    <color name="incomingChatBubbleTextColor">#333333</color>
+
+
+
+</resources>

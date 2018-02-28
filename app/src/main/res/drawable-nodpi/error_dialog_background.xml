@@ -1,0 +1,14 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle" >
+
+    <solid
+        android:color="@color/error_dialog_bg_color">
+    </solid>
+
+    <corners
+        android:bottomLeftRadius="@dimen/error_dialog_corner_radius"
+        android:bottomRightRadius="@dimen/error_dialog_corner_radius"
+        android:topLeftRadius="@dimen/error_dialog_corner_radius"
+        android:topRightRadius="@dimen/error_dialog_corner_radius" />
+
+</shape>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="vm" type="org.socratic.android.contract.NativeCardQAContract.ViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardCornerRadius="@dimen/card_corner_radius"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="@dimen/card_elevation">
+
+        <ScrollView
+            android:id="@+id/card_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/card_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/native_card_side_padding"
+                        android:visibility="gone"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/header_icon"
+                            android:src="@drawable/result_card_cherry"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp" />
+
+                        <TextView
+                            android:id="@+id/header_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:textSize="28sp"
+                            style="@style/BoldFont" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="@dimen/native_card_side_padding"
+                    android:layout_marginRight="@dimen/native_card_side_padding">
+
+                    <ImageView
+                        android:id="@+id/question_source_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp" />
+
+                    <TextView
+                        android:id="@+id/question_source_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:textSize="17sp"
+                        style="@style/BoldFont" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/question_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/native_card_side_padding"
+                    android:layout_marginRight="@dimen/native_card_side_padding"
+                    android:layout_marginTop="10dp"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:text="@string/answer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/native_card_side_padding"
+                    android:layout_marginRight="@dimen/native_card_side_padding"
+                    android:layout_marginTop="10dp"
+                    android:textSize="17sp"
+                    style="@style/BoldFont" />
+
+                <TextView
+                    android:id="@+id/answer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/native_card_side_padding"
+                    android:layout_marginRight="@dimen/native_card_side_padding"
+                    android:textSize="17sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="#1A000000"/>
+
+                <TextView
+                    android:text="@string/source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/native_card_side_padding"
+                    android:layout_marginRight="@dimen/native_card_side_padding"
+                    android:textSize="17sp"
+                    style="@style/BoldFont" />
+
+                <TextView
+                    android:id="@+id/source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/native_card_side_padding"
+                    android:layout_marginRight="@dimen/native_card_side_padding"
+                    android:lines="1"
+                    android:ellipsize="end"
+                    android:textSize="17sp"
+                    android:autoLink="web"
+                    android:textColorLink="@color/white"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v7.widget.CardView>
+</layout>

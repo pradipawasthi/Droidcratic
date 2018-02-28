@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="vm" type="org.socratic.android.contract.CameraContract.ViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/base_view"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:screenOrientation="portrait"
+        tools:context="org.socratic.android.activities.CameraActivity">
+
+        <RelativeLayout
+            android:id="@+id/camera_preview_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <RelativeLayout
+            android:id="@+id/view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <org.socratic.android.views.CropWidgetView
+                android:id="@+id/crop_widget"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/input_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/camera_viewpager_margin"
+                android:layout_marginRight="@dimen/camera_viewpager_margin" />
+
+        </RelativeLayout>
+
+        <org.socratic.android.views.AdvancedViewPager
+            android:id="@+id/nav_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        
+        <View
+            android:id="@+id/filler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/crop_widget_alpha_outside"
+            android:layout_alignParentBottom="true"/>
+
+        <TextView
+            android:id="@+id/friends_ftue_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/add_friends"
+            android:textAllCaps="true"
+            android:visibility="gone"
+            fontPath="fonts/cerapro-bold.otf"/>
+
+        <org.socratic.android.views.VerticalSlidingDrawer
+            android:id="@+id/invitations_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="-45dp"
+            app:allowSingleTap="false"
+            app:handle="@+id/handle"
+            app:content="@+id/content">
+
+            <LinearLayout android:id="@+id/handle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp">
+                <ImageView android:id="@+id/handle_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/nav_invites" />
+            </LinearLayout>
+
+                <org.socratic.android.views.InvitationsView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/translucent_black"/>
+
+        </org.socratic.android.views.VerticalSlidingDrawer>
+
+        <View
+            android:id="@+id/anchor_view"
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/camera_viewpager_margin"
+            android:layout_marginRight="@dimen/camera_viewpager_margin"
+            android:layout_height="190dp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/input_controller"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_above="@+id/anchor_view"
+            android:layout_marginLeft="@dimen/camera_viewpager_margin"
+            android:layout_marginRight="@dimen/camera_viewpager_margin">
+
+            <org.socratic.android.views.PagerClickTitleStrip
+                android:id="@+id/input_title_strip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="55dp"
+                android:paddingLeft="55dp"
+                android:textSize="16sp" />
+        </android.support.v4.view.ViewPager>
+
+        <org.socratic.android.views.NavTabsView
+            android:id="@+id/nav_control_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:fitsSystemWindows="true" />
+
+        <org.socratic.android.views.InAppMessageView
+            android:layout_width="match_parent"
+            android:id="@+id/in_app_message_view"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:fitsSystemWindows="true"
+            android:layout_marginTop="24dp"/>
+
+        <RelativeLayout
+            android:id="@+id/no_connectivity_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#cc403157"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="#f22c34"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/bottom_navigation_margin">
+
+                <TextView
+                    style="@style/BoldFont"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/internet_connection_required"
+                    android:textSize="17sp"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

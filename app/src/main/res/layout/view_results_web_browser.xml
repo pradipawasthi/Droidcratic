@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_title_text"
+                style="@style/BoldFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:drawablePadding="@dimen/padding_large"
+                android:gravity="center"
+                android:maxLines="1"
+                android:minHeight="58dp"
+                android:textColor="@color/web_card_font_color"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_web_controls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_5dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_url_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:src="@drawable/btn_nav_selector_fwd" />
+
+            <ImageView
+                android:id="@+id/iv_url_fwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_medium"
+                android:src="@drawable/btn_nav_selector_back" />
+
+            <TextView
+                android:id="@+id/tv_url_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/padding_small"
+                android:paddingRight="@dimen/padding_medium"
+                android:paddingTop="@dimen/padding_tiny"
+                android:textColor="@color/web_card_font_color"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <org.socratic.android.views.WebBrowserCoreView
+                    android:id="@+id/web_core_results"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></org.socratic.android.views.WebBrowserCoreView>
+
+                <LinearLayout
+                    android:id="@+id/layout_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:paddingBottom="@dimen/padding_large"
+                        android:paddingLeft="@dimen/padding_large"
+                        android:paddingRight="@dimen/padding_large"
+                        android:paddingTop="@dimen/padding_huge"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/results_loading_wireframe" />
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                android:id="@+id/progress_url_load"
+                style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_medium"
+                android:progress="0"
+                android:secondaryProgress="0"
+                app:mpb_progressStyle="horizontal"
+                app:mpb_useIntrinsicPadding="false" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>
+

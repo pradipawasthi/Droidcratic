@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Socratic</string>
+    <string name="searching">Mencari</string>
+    <string name="socratic_needs_camera">Socratic membutuhkan izin penggunaan kamera untuk beroperasi</string>
+    <string name="search">Cari</string>
+    <string name="search_again">Lakukan pencarian kembali</string>
+    <string name="socratic_reads_your_question">Socratic membaca pertanyaan Anda dan membantu Anda belajar dengan banyak cara</string>
+    <string name="we_need_camera_access">Kami membutuhkan akses ke kamera</string>
+    <string name="socratic_needs_camera_access">Socratic membutuhkan akses ke kamera untuk membantu pekerjaan rumah!</string>
+    <string name="enable_camera">Aktifkan kamera</string>
+    <string name="answer">Jawaban</string>
+    <string name="how_do_you_like_socratic">Apakah Anda menyukai Socratic?</string>
+    <string name="image_upload_failed">Gagal mengunggah gambar!</string>
+    <string name="internet_connection_required">Membutuhkan koneksi internet</string>
+    <string name="no_thanks">Tidak</string>
+    <string name="rate_us_please">Beri kami peringkat di Google Play? (tolong!)</string>
+    <string name="rating_feedback_what_could_we_do">Apa yang bisa lebih ditingkatkan dari aplikasi ini? Kami membaca setiap umpan balik yang kami terima!</string>
+    <string name="source">Sumber</string>
+    <string name="sure">Tentu</string>
+    <string name="thanks">Terima kasih!</string>
+    <string name="we_couldnt_complete_this_search">Kami tidak dapat menyelesaikan pencarian ini untuk Anda. Silakan coba lagi nanti.</string>
+    <string name="write_feedback">Tuliskan umpan balik di sini…</string>
+    <string name="type_your_question">Ketikkan pertanyaanmu.</string>
+    <string name="see_example">Lihat contoh</string>
+    <string name="swipe_to_type">Usap untuk mengetik</string>
+
+    <string name="crop_msg">Potong hanya satu pertanyaan</string>
+    <string name="take_picture_with_question">Potret pertanyaan untuk menemukan jawaban</string>
+    <string name="try_subjects">Coba pertanyaan matematika, ilmu pengetahuan, dan sejarah!</string>
+    <string name="crop_one_question_at_a_time">Potong satu pertanyaan untuk satu saat</string>
+
+    <string name="accurate_answers">Itu akan memberi Anda hasil yang lebih baik!</string>
+    <string name="got_it">Oke</string>
+
+    <string name="share_socratic">Bagikan Socratic</string>
+    <string name="scan_snapcode">Pindai kode ini pada Snapchat untuk mengunduh Socratic</string>
+    <string name="copy_link">Salin tautan</string>
+    <string name="copy_link_copy">Bagikan di mana saja Anda inginkan!</string>
+    <string name="link_copied_to_clipboard">Tautan disalin ke papan klip!</string>
+    <string name="facebook_messenger">Facebook Messenger</string>
+    <string name="facebook_messenger_copy">Undang semua teman Facebook-mu</string>
+    <string name="messages">Pesan</string>
+    <string name="messages_copy">Kirim ke orang yang Anda sukai</string>
+    <string name="more">Lainnya</string>
+    <string name="more_copy">Cara lain untuk membagi</string>
+    <string name="share_message_copy">Aplikasi ini memberimu jawaban untuk pekerjaan rumah di segala bidang dalam sekejap. 🙏  💯  Dapatkan di sini: </string>
+
+    <string name="camera">Câmera</string>
+    <string name="add_friends">TAMBAH TEMAN</string>
+
+    <!-- Native Math Card -->
+    <string name="header_solution">Solusi</string>
+
+    <!-- Settings -->
+    <string name="settings">Setelan</string>
+    <string name="acknowledgements">Penghargaan</string>
+    <string name="licenses">Lisensi</string>
+</resources>

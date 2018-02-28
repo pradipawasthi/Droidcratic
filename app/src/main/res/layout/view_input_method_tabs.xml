@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/math_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="math"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/camera_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/camera"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textAllCaps="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"/>
+
+        <TextView
+            android:id="@+id/text_tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ABC"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textAllCaps="true"/>
+
+    </LinearLayout>
+
+</layout>

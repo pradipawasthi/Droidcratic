@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.socratic.android.activities.StartActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/emoji_container"
+            android:animateLayoutChanges="true"
+            android:background="@color/purpleRatingBackground">
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/content_container">
+
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="104dp"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/text_start"
+                android:src="@drawable/cbo"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:id="@+id/text_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:textColor="#ffffff"
+                android:lineSpacingExtra="0sp"
+                android:layout_centerInParent="true"
+                android:text="@string/start_screen_copy"
+                fontPath="fonts/cerapro-bold.otf"/>
+
+            <org.socratic.android.views.ForegroundLinearLayout
+                style="@style/ThemeStrongButtonWhite"
+                android:id="@+id/btn_start"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:paddingLeft="46dp"
+                android:paddingRight="46dp"
+                android:layout_marginRight="58dp"
+                android:layout_marginLeft="58dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/text_start">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    android:text="@string/start_btn"
+                    style="@style/BoldFontPurple"/>
+            </org.socratic.android.views.ForegroundLinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

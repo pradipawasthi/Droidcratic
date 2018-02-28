@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<resources>
+
+    <declare-styleable name="ForegroundLinearLayout">
+        <attr name="foregroundInsidePadding" />
+        <attr name="android:foregroundGravity" />
+        <attr name="foregroundDrawable" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleBadgeTextView">
+        <attr name="android:background" />
+        <attr name="mbtv_border_width" format="dimension" />
+        <attr name="mbtv_border_color" format="color" />
+        <attr name="mbtv_border_alpha" format="float" />
+        <attr name="mbtv_type" format="enum">
+            <enum name="shadow_gradual" value="1" />
+            <enum name="shadow_alpha" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableLayoutView">
+        <attr name="el_duration" format="integer" />
+        <attr name="el_expanded" format="boolean" />
+        <attr name="el_parallax" format="float" />
+        <attr name="android:orientation" />
+    </declare-styleable>
+
+    <declare-styleable name="VerticalSlidingDrawer">
+        <attr name="handle" format="reference" />
+        <attr name="content" format="reference" />
+        <attr name="bottomOffset" format="dimension" />
+        <attr name="topOffset" format="dimension" />
+        <attr name="allowSingleTap" format="boolean" />
+        <attr name="animateOnClick" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="trimLength" format="integer" />
+    </declare-styleable>
+
+</resources>

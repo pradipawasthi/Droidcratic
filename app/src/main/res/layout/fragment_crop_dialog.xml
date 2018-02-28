@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="17"
+    android:id="@+id/crop_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cropDialog"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="186dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:srcCompat="@drawable/cropping_edu_graphic" />
+
+    <ImageView
+        android:id="@+id/greenRectangle"
+        android:background="@drawable/green_rectangle"
+        android:layout_width="125dp"
+        android:layout_marginTop="230dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="40dp"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/cropOne"
+        fontPath="fonts/cerapro-bold.otf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="363dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/crop_one_question_at_a_time"
+        android:textColor="@android:color/white"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/cropOneCopy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="65dp"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:layout_marginTop="393dp"
+        fontPath="fonts/cerapro-regular.otf"
+        android:text="@string/accurate_answers" />
+
+    <ImageView
+        android:id="@+id/button"
+        android:background="@drawable/got_it_btn_rounded"
+        android:layout_width="161dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/purpleStandard"
+        fontPath="fonts/cerapro-bold.otf"
+        android:layout_alignBottom="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:text="@string/got_it" />
+
+</RelativeLayout>

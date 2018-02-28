@@ -1,0 +1,63 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="results_page_margin">8dp</dimen>
+    <dimen name="results_padding">18dp</dimen>
+    <dimen name="padding_huge">24dp</dimen>
+    <dimen name="padding_tiny">2dp</dimen>
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_small_6dp">6dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">14dp</dimen>
+    <dimen name="padding_5dp">5dp</dimen>
+    <dimen name="camera_viewpager_margin">16dp</dimen>
+    <dimen name="padding_small_4dp">4dp</dimen>
+    <dimen name="results_dots_margin_top">10dp</dimen>
+    <dimen name="results_dots_margin_bottom">12dp</dimen>
+    <dimen name="results_dot_diameter">7dp</dimen>
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="native_card_side_padding">10dp</dimen>
+    <dimen name="bottom_navigation_margin">0dp</dimen>
+
+    <dimen name="btn_corner_rounding_lite">20dp</dimen>
+    <dimen name="btn_corner_rounding">40dp</dimen>
+    <dimen name="side_margin_strong_button">32dp</dimen>
+    <dimen name="strong_button_height">55dp</dimen>
+    <dimen name="strong_button_margin_bottom">60dp</dimen>
+    <dimen name="side_padding_crop_widget">16dp</dimen>
+    <dimen name="error_dialog_corner_radius">9dp</dimen>
+    <dimen name="max_crop_rect_height">180dp</dimen>
+    <dimen name="min_crop_rect_height">20dp</dimen>
+    <dimen name="crop_handlebar_bitmap_width">28dp</dimen>
+    <dimen name="crop_handlebar_bitmap_height">28dp</dimen>
+    <dimen name="crop_handlebar_bitmap_offset">1.5dp</dimen>
+    <dimen name="capture_corner_bitmap_width">24dp</dimen>
+    <dimen name="capture_corner_bitmap_height">18dp</dimen>
+    <dimen name="capture_crosshair_bitmap_width">16dp</dimen>
+    <dimen name="capture_crosshair_bitmap_height">16dp</dimen>
+    <dimen name="clear_text_button_size">16dp</dimen>
+    
+    <!-- text sizes -->
+    <dimen name="text_size_small">13sp</dimen>
+    <dimen name="onboarding_text_size">20sp</dimen>
+    <dimen name="camera_onboarding_text_size">16sp</dimen>
+
+
+    <!-- Math Card dimens -->
+    <dimen name="header_text_size">28sp</dimen>
+    <dimen name="header_drawable_padding">8dp</dimen>
+    <dimen name="item_math_step_badge_width">37dp</dimen>
+    <dimen name="item_math_step_badge_height">37dp</dimen>
+    <dimen name="item_math_step_margin_left">10dp</dimen>
+    <dimen name="item_math_step_badge_text_sz">12sp</dimen>
+    <dimen name="item_math_step_hint_txt_sz">16sp</dimen>
+    <dimen name="solution_step_badge_width">31dp</dimen>
+    <dimen name="solution_step_badge_height">31dp</dimen>
+    <dimen name="hint_imageview_width">282.4dp</dimen>
+    <dimen name="hint_imageview_height">300dp</dimen>
+
+
+
+</resources>

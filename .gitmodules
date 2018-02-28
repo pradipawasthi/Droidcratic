@@ -1,0 +1,3 @@
+[submodule "jlatexandroid"]
+	path = jlatexandroid
+	url = https://github.com/socraticorg/jlatexandroid.git

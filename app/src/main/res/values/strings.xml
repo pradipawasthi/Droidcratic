@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">Socratic</string>
+    <string name="searching">Searching</string>
+    <string name="socratic_needs_camera">Socratic needs camera permission to work</string>
+    <string name="search">Search</string>
+    <string name="search_again">Search again</string>
+    <string name="socratic_reads_your_question">Socratic reads your question and shows you several ways to learn</string>
+    <string name="we_need_camera_access">We need camera access</string>
+    <string name="socratic_needs_camera_access">Socratic needs camera access to help with homework!</string>
+    <string name="enable">Enable</string>
+    <string name="camera_access_copy">Scan and search your homework questions</string>
+    <string name="enable_camera">Enable camera</string>
+    <string name="answer">Answer</string>
+    <string name="source">Source</string>
+    <string name="image_upload_failed">Image upload failed!</string>
+    <string name="we_couldnt_complete_this_search">We couldn\'t complete this search for you. Please, try again later.</string>
+    <string name="internet_connection_required">Internet connection required</string>
+    <string name="no_thanks">No, thanks</string>
+    <string name="thanks">Thanks!</string>
+    <string name="sure">Sure</string>
+    <string name="how_do_you_like_socratic">How do you like Socratic?</string>
+    <string name="rate_us_please">Rate us on Google Play? (please!)</string>
+    <string name="rating_feedback_what_could_we_do">What could be better about the app?\nWe read every piece of feedback!</string>
+    <string name="write_feedback">Write feedback here...</string>
+    <string name="crop_msg">Crop just one question</string>
+    <string name="type_your_question">Type your question</string>
+    <string name="take_picture_with_question">Take a pic of a question to find answers</string>
+    <string name="see_example">See an example</string>
+    <string name="try_subjects">Try math, science, and history questions!</string>
+    <string name="crop_one_question_at_a_time">Crop one question at a time</string>
+    <string name="accurate_answers">Otherwise we can\'t give you accurate answers!</string>
+    <string name="got_it">Got it</string>
+    <string name="swipe_to_type">Swipe to type instead</string>
+    <string name="start_screen_copy">Homework done in a snap</string>
+    <string name="continue_btn">Continue</string>
+    <string name="start_btn">Take me there</string>
+    <string name="ask_name">What\'s your name?</string>
+    <string name="age_check">I am over the age of 13</string>
+    <string name="name">name</string>
+    <string name="socratic_permission">Socratic needs you to</string>
+    <string name="permission_denied_header">We kinda need that…</string>
+    <string name="permission_denied_body">Socratic works by taking photos of homework with your phone\'s camera, so…</string>
+    <string name="go_to_settings">Go to settings</string>
+    <string name="share_socratic">Share Socratic</string>
+    <string name="scan_snapcode">Scan snapcode for easy download</string>
+    <string name="copy_link">Copy Link</string>
+    <string name="copy_link_copy">Share anywhere you want</string>
+    <string name="link_copied_to_clipboard">Link copied to clipboard!</string>
+    <string name="facebook_messenger">Facebook Messenger</string>
+    <string name="facebook_messenger_copy">Invite all those FB peeps!</string>
+    <string name="messages">Messages</string>
+    <string name="messages_copy">Share to your fave humans</string>
+    <string name="more">More</string>
+    <string name="more_copy">The more (ways to share) the merrier</string>
+    <string name="share_message_copy">This app gives you *instant* homework answers, all subjects 🙏 💯 Get it: </string>
+    <string name="camera_permission_denied">Socratic works by taking photos of homework with your phone\'s camera, so…</string>
+    <string name="enable_contacts">Enable contacts</string>
+    <string name="contacts_access_copy">Get answers from classmates</string>
+    <string name="contacts_permission_denied">We use contacts to show you which friends use Socratic too. No spam, we promise!</string>
+    <string name="camera">Camera</string>
+    <string name="ABC">ABC</string>
+    <string name="add_friends">Add Friends</string>
+
+    <!-- Native Math Card -->
+    <string name="header_solution">Solution</string>
+    <string name="item_hint">HINT</string>
+
+    <!-- Chat -->
+    <string name="empty_chat_copy">No messages yet. Say something!</string>
+    <string name="chat">Chat</string>
+    <string name="chats">Chats</string>
+    <string name="empty_chat_list_title">Homework is better with friends</string>
+    <string name="empty_chat_list_body">Invite classmates to Socratic by swiping left and pulling down on the homescreen. Once you add them, they’ll show up here!</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="acknowledgements">Acknowledgements</string>
+    <string name="licenses">Licenses</string>
+
+</resources>

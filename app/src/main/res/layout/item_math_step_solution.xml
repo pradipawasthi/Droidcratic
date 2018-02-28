@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <org.socratic.android.views.ExpandableLayoutView
+        android:id="@+id/ev_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mathCardHintBackgroundColor"
+        app:el_duration="300"
+        app:el_expanded="false">
+
+
+        <LinearLayout
+            android:id="@+id/ll_substeps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+
+    </org.socratic.android.views.ExpandableLayoutView>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_default_content"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_below="@id/ev_container">
+
+        <ImageView
+            android:id="@+id/iv_badge"
+            android:layout_width="@dimen/solution_step_badge_width"
+            android:layout_height="@dimen/solution_step_badge_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/item_math_step_margin_left"
+            android:inputType="number"
+            android:maxLines="1"
+            android:src="@drawable/solution_checkmark"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <org.socratic.android.views.JLatexView
+            android:id="@+id/lv_latex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/item_math_step_margin_left"
+            android:layout_toRightOf="@id/iv_badge" />
+
+        <ImageView
+            android:id="@+id/iv_expand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:visibility="invisible"
+            android:layout_marginRight="@dimen/item_math_step_margin_left"
+            android:background="@drawable/mathstepper_expand_ico" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/item_hint"
+            android:visibility="invisible"
+            android:textColor="@color/mathStepHintTextColor"
+            android:textSize="@dimen/item_math_step_hint_txt_sz"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</LinearLayout>

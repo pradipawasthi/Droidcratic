@@ -1,0 +1,116 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/AppTheme.Widget.TextView</item>
+    </style>
+
+    <style name="AppTheme.Widget.TextView" parent="android:Widget.TextView">
+        <item name="fontPath">fonts/cerapro-regular.otf</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BoldFont" parent="android:Widget.TextView">
+        <item name="fontPath">fonts/cerapro-bold.otf</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BoldFontPurple" parent="android:Widget.TextView">
+        <item name="fontPath">fonts/cerapro-bold.otf</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/purpleRatingBackground</item>
+    </style>
+
+    <style name="BoldFontWebCardHeader" parent="BoldFont">
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_graphic_parent</item>
+    </style>
+
+    <style name="ThemeStrongButton" parent="Theme.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/strong_button_height</item>
+        <item name="android:layout_marginBottom">@dimen/strong_button_margin_bottom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="foregroundDrawable">@drawable/ripple_strong_foreground</item>
+        <item name="android:background">@drawable/ripple_strong_background</item>
+    </style>
+
+    <style name="ThemeCancelSearchButton" parent="Theme.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/strong_button_height</item>
+        <item name="android:paddingLeft">80dp</item>
+        <item name="android:paddingRight">80dp</item>
+        <item name="android:layout_marginBottom">@dimen/strong_button_margin_bottom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="foregroundDrawable">@drawable/ripple_cancel_search_foreground</item>
+        <item name="android:background">@drawable/ripple_cancel_search_background</item>
+    </style>
+
+    <style name="ThemeStrongButtonGrey" parent="Theme.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/strong_button_height</item>
+        <item name="android:layout_marginBottom">@dimen/strong_button_margin_bottom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="foregroundDrawable">@drawable/ripple_strong_foreground</item>
+        <item name="android:background">@drawable/ripple_strong_background_grey</item>
+    </style>
+
+    <style name="ThemeStrongButtonWhite" parent="Theme.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/strong_button_height</item>
+        <item name="android:layout_marginBottom">@dimen/strong_button_margin_bottom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="foregroundDrawable">@drawable/ripple_strong_foreground</item>
+        <item name="android:background">@drawable/ripple_strong_background_white</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/transparent</item>
+        <item name="colorControlActivated">@color/white</item>
+    </style>
+
+
+    <style name="SocraticRatingBar" parent="android:Widget.RatingBar">
+        <!--
+        Disabled for correct behavior on Android 4.x, see
+        https://github.com/android/platform_frameworks_base/commit/911743652b597057a1bd7ef8a921e9ff8dce0f4a#diff-149f45c5ff2d3185bb79688ba17bc432L536
+        <item name="android:progressDrawable">@null</item>
+        -->
+        <item name="android:indeterminateDrawable">@null</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:maxHeight">50dp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+    </style>
+
+    <style name="Dialog.FullScreen" parent="Theme.AppCompat.Dialog">
+        <item name="android:padding">0dp</item>
+        <item name="android:windowBackground">@color/cropDialog</item>
+    </style>
+
+    <style name="AppLoginTheme" parent="Theme.AccountKit">
+        <item name="com_accountkit_background_color">@color/onboarding_bg</item>
+        <item name="com_accountkit_input_text_color">@color/purpleRatingBackground</item>
+        <item name="com_accountkit_text_color">@android:color/black</item>
+        <item name="com_accountkit_button_background_color">@color/purple_btn_color_off</item>
+        <item name="com_accountkit_button_pressed_background_color">@color/purple_btn_color_on</item>
+        <item name="com_accountkit_button_disabled_background_color">@color/purple_btn_color_off</item>
+        <item name="com_accountkit_input_background_color">@color/onboarding_bg</item>
+        <item name="com_accountkit_input_border_color">@color/web_card_font_color</item>
+        <item name="com_accountkit_button_disabled_text_color">@android:color/white</item>
+    </style>
+</resources>
