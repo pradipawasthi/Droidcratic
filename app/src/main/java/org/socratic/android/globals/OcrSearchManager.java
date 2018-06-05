@@ -7,19 +7,15 @@ import org.greenrobot.eventbus.EventBus;
 import org.socratic.android.analytics.AnalyticsManager;
 import org.socratic.android.analytics.OCRAnalytics;
 import org.socratic.android.api.CanceledException;
-import org.socratic.android.api.OcrTextGetRequest;
+import org.socratic.android.api.request.OcrTextGetRequest;
 import org.socratic.android.api.model.CardResponse;
-import org.socratic.android.api.model.MathCardResponse;
 import org.socratic.android.api.model.MetaData;
 import org.socratic.android.api.response.OcrTextResponse;
 import org.socratic.android.api.response.SearchResponse;
 import org.socratic.android.events.OcrSearchEvent;
 import org.socratic.android.util.MultiLog;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -12,7 +12,7 @@ import org.socratic.android.BuildConfig;
 import org.socratic.android.analytics.AnalyticsManager;
 import org.socratic.android.analytics.OCRAnalytics;
 import org.socratic.android.api.CanceledException;
-import org.socratic.android.api.OcrImagePostRequest;
+import org.socratic.android.api.request.OcrImagePostRequest;
 import org.socratic.android.api.response.OcrImageResponse;
 import org.socratic.android.events.PhotoUploadEvent;
 import org.socratic.android.util.CameraHelper;

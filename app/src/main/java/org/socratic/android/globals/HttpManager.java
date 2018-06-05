@@ -12,7 +12,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
 import org.socratic.android.BuildConfig;
-import org.socratic.android.api.BaseRequest;
+import org.socratic.android.api.request.BaseRequest;
 import org.socratic.android.api.response.NoSerializeResponse;
 import org.socratic.android.api.response.BingPredictionsResponse;
 import org.socratic.android.storage.InstallPref;

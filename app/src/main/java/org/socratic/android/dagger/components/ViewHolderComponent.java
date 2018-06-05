@@ -1,6 +1,5 @@
 package org.socratic.android.dagger.components;
 
-import org.socratic.android.adapter.ConnectedContactsAdapter;
 import org.socratic.android.dagger.modules.ViewHolderModule;
 import org.socratic.android.dagger.modules.ViewModelModule;
 import org.socratic.android.dagger.scopes.PerViewHolder;
@@ -16,5 +15,4 @@ import dagger.Component;
 @Component(dependencies = ActivityComponent.class, modules = {ViewHolderModule.class, ViewModelModule.class})
 public interface ViewHolderComponent {
     void inject(MathStepAdapter mathStepAdapter);
-    void inject(ConnectedContactsAdapter connectedContactsAdapter);
 }

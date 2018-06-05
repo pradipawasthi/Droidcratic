@@ -3,13 +3,9 @@ package org.socratic.android.dagger.modules;
 import org.socratic.android.contract.CameraContract;
 import org.socratic.android.contract.DefinitionCardContract;
 import org.socratic.android.contract.ExplainerCardContract;
-import org.socratic.android.contract.ChatDetailContract;
 import org.socratic.android.contract.InvitationsContract;
 import org.socratic.android.contract.MathCardContract;
 import org.socratic.android.contract.DefaultPermissionContract;
-import org.socratic.android.contract.IdentityContract;
-import org.socratic.android.contract.ChatContract;
-import org.socratic.android.contract.GroupsContract;
 
 import org.socratic.android.contract.NativeCardQAContract;
 import org.socratic.android.contract.NativeCardVideoContract;
@@ -20,16 +16,12 @@ import org.socratic.android.contract.TextSearchContract;
 import org.socratic.android.contract.WebCardContract;
 import org.socratic.android.viewmodel.CameraViewModel;
 import org.socratic.android.contract.CropperContract;
-import org.socratic.android.viewmodel.ChatDetailViewModel;
-import org.socratic.android.viewmodel.ChatViewModel;
 import org.socratic.android.viewmodel.CropperViewModel;
 import org.socratic.android.contract.ResultsContract;
 import org.socratic.android.viewmodel.ExplainerViewModel;
 import org.socratic.android.viewmodel.DefinitionCardViewModel;
 import org.socratic.android.viewmodel.MathCardViewModel;
 import org.socratic.android.viewmodel.DefaultPermissionViewModel;
-import org.socratic.android.viewmodel.IdentityViewModel;
-import org.socratic.android.viewmodel.GroupsViewModel;
 import org.socratic.android.viewmodel.InvitationsViewModel;
 
 import org.socratic.android.viewmodel.NativeCardQAViewModel;
@@ -37,8 +29,6 @@ import org.socratic.android.viewmodel.NativeCardVideoViewModel;
 import org.socratic.android.viewmodel.ResultsViewModel;
 import org.socratic.android.viewmodel.SearchInterstitialViewModel;
 import org.socratic.android.viewmodel.SearchProgressViewModel;
-import org.socratic.android.contract.SplashPermissionsContract;
-import org.socratic.android.viewmodel.SplashPermissionsViewModel;
 import org.socratic.android.viewmodel.SplashViewModel;
 import org.socratic.android.viewmodel.TextSearchViewModel;
 import org.socratic.android.viewmodel.WebCardViewModel;
@@ -62,9 +52,6 @@ public abstract class ViewModelModule {
 
     //Activities
     @Binds
-    abstract SplashPermissionsContract.ViewModel bindSplashPermissionsViewModel(SplashPermissionsViewModel splashPermissionsViewModel);
-
-    @Binds
     abstract CameraContract.ViewModel bindCameraViewModel(CameraViewModel cameraViewModel);
 
     @Binds
@@ -78,9 +65,6 @@ public abstract class ViewModelModule {
 
     @Binds
     abstract ResultsContract.ViewModel bindResultsViewModel(ResultsViewModel resultsViewModel);
-
-    @Binds
-    abstract IdentityContract.ViewModel bindIdentityViewModel(IdentityViewModel identityViewModel);
 
     @Binds
     abstract SplashContract.ViewModel bindSplashViewModel(SplashViewModel splashViewModel);
@@ -105,19 +89,10 @@ public abstract class ViewModelModule {
     abstract MathCardContract.ViewModel bindMathCardViewModel(MathCardViewModel mathCardViewModel);
 
     @Binds
-    abstract ChatContract.ViewModel bindChatViewModel(ChatViewModel chatViewModel);
-
-    @Binds
-    abstract GroupsContract.ViewModel bindGroupsViewModel(GroupsViewModel groupsViewModel);
-
-    @Binds
     abstract ExplainerCardContract.ViewModel bindsExplainerViewModel(ExplainerViewModel explainerViewModel);
-  
+
     @Binds
     abstract DefinitionCardContract.ViewModel bindDefinitionCardViewModel(DefinitionCardViewModel definitionCardViewModel);
-  
-    @Binds
-    abstract ChatDetailContract.ViewModel bindChatDetailViewModel(ChatDetailViewModel chatDetailViewModel);
 
     @Binds
     abstract NativeCardVideoContract.ViewModel bindNativeCardVideoViewModel(NativeCardVideoViewModel videoCardViewModel);

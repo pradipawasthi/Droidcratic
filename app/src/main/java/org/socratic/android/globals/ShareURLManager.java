@@ -1,7 +1,7 @@
 package org.socratic.android.globals;
 
 import org.socratic.android.api.CanceledException;
-import org.socratic.android.api.ShareURLPostRequest;
+import org.socratic.android.api.request.ShareURLPostRequest;
 import org.socratic.android.api.response.BaseResponse;
 
 import javax.inject.Inject;

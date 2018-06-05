@@ -18,9 +18,6 @@ public class SearchResults extends SocraticBaseResponse implements SearchRespons
 
     private MetaData metadata;
 
-    @SerializedName("turnon_appsee")
-    private boolean isAppseeOn;
-
     private String query;
 
     @SerializedName("query_type")
@@ -43,14 +40,6 @@ public class SearchResults extends SocraticBaseResponse implements SearchRespons
 
     public void setMetadata(MetaData metadata) {
         this.metadata = metadata;
-    }
-
-    public boolean isAppseeOn() {
-        return isAppseeOn;
-    }
-
-    public void setAppseeOn(boolean appseeOn) {
-        isAppseeOn = appseeOn;
     }
 
     public String getQuery() {

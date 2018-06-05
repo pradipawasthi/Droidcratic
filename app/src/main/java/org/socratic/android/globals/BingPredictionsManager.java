@@ -2,7 +2,7 @@ package org.socratic.android.globals;
 
 import org.greenrobot.eventbus.EventBus;
 import org.socratic.android.api.CanceledException;
-import org.socratic.android.api.BingPredictionsGetRequest;
+import org.socratic.android.api.request.BingPredictionsGetRequest;
 import org.socratic.android.api.response.BingPredictionsResponse;
 import org.socratic.android.events.BingPredictionsEvent;
 

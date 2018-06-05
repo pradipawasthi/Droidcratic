@@ -21,8 +21,6 @@ Check the `gradle-example.properties` file in the root folder. Copy over the con
 
 Also check the `fabric-example.properties` file in the app module folder. Duplicate this file, rename it `fabric.properties` and update the dummy values.
 
-For Firebase, a `google-services.json` configuration file is needed in the product flavor and build type folders. [Example](https://firebase.google.com/docs/admob/android/google-services.json) and more [info](https://firebase.google.com/support/guides/google-android#migrate_your_console_project).
-
 ## Contributing
 
 + `develop` is considered the mainline branch for the project. Project uses [Gitflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) as its Git workflow. Please review this workflow before contributing to the project.

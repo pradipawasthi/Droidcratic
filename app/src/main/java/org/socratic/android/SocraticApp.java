@@ -5,7 +5,6 @@ import android.app.Application;
 import android.app.Service;
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.multidex.MultiDex;
 import android.view.View;
 
 import com.crashlytics.android.Crashlytics;
@@ -43,10 +42,6 @@ public class SocraticApp extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-
-        if (BuildConfig.DEBUG) {
-            MultiDex.install(this);
-        }
     }
 
     @Override

@@ -5,8 +5,6 @@ import org.socratic.android.dagger.modules.ViewModelModule;
 import org.socratic.android.dagger.scopes.PerFragment;
 import org.socratic.android.fragments.ExplainerCardFragment;
 import org.socratic.android.fragments.MathCardFragment;
-import org.socratic.android.fragments.ChatFragment;
-import org.socratic.android.fragments.GroupsFragment;
 import org.socratic.android.fragments.NativeCardQAFragment;
 import org.socratic.android.fragments.NativeDefintionCardFragment;
 import org.socratic.android.fragments.NativeCardVideoFragment;
@@ -27,8 +25,6 @@ public interface FragmentComponent {
     void inject(TextSearchFragment fragment);
     void inject(WebCardFragment fragment);
     void inject(MathCardFragment fragment);
-    void inject(ChatFragment fragment);
-    void inject(GroupsFragment fragment);
     void inject(ExplainerCardFragment fragment);
     void inject(NativeDefintionCardFragment fragment);
     void inject(NativeCardVideoFragment fragment);

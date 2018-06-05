@@ -22,13 +22,11 @@ public class SplashViewModel extends BaseViewModel<SplashContract.View>
     private InitManager initManager;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-    private InstallPref installPref;
 
     @Inject
-    public SplashViewModel(InitManager initManager, SharedPreferences sharedPreferences, InstallPref installPref) {
+    public SplashViewModel(InitManager initManager, SharedPreferences sharedPreferences) {
         this.initManager = initManager;
         this.sharedPreferences = sharedPreferences;
-        this.installPref = installPref;
     }
 
     @Override
@@ -61,51 +59,6 @@ public class SplashViewModel extends BaseViewModel<SplashContract.View>
 
                 String inAppMessageType = response.getInAppMessage().getInAppMessageType();
                 editor.putString("message_type", inAppMessageType);
-            }
-
-            boolean forcedLoginIsOn = response.getForcedLogin().getForcedLoginIsOn();
-            editor.putBoolean("forced_login_is_on", forcedLoginIsOn);
-
-            String experience = response.getForcedLogin().getExperience();
-            editor.putString("experience", experience);
-
-            int unreadMessageCount = response.getUnreadMessageCount();
-            editor.putInt("unread_message_count", unreadMessageCount);
-
-            String onboardingAdvanceExperiment = response.getForcedLogin().getOnboardingAdvanceExperiment();
-            editor.putString("onboarding_advance_experiment", onboardingAdvanceExperiment);
-
-            String onboardingSMSExperiment = response.getForcedLogin().getOnboardingSMSExperiment();
-            editor.putString("onboarding_sms_experiment", onboardingSMSExperiment);
-
-            boolean isAskFriendsOn = response.getConversations().getAskFriends().getIsAskFriendsOn();
-            editor.putBoolean("is_ask_friends_on", isAskFriendsOn);
-
-            String conversationsAskFriendsSMSExperiment = response.getConversations().getAskFriends().getConversationsAskFriendsSMSExperiment();
-            editor.putString("converations_ask_friends_sms_experiment", conversationsAskFriendsSMSExperiment);
-
-            boolean isDrawerOn = response.getConversations().getDrawer().getIsDrawerOn();
-            editor.putBoolean("is_drawer_on", isDrawerOn);
-
-            String conversationsFriendsPaneSMSExperiment = response.getConversations().getDrawer().getConversationsFriendsPaneSMSExperiment();
-            editor.putString("conversations_friends_pane_sms_experiment", conversationsFriendsPaneSMSExperiment);
-
-            boolean turnOnAppSee = response.getAppSee().getTurnOnAppSee();
-            editor.putBoolean("turn_on_app_see", turnOnAppSee);
-
-            boolean forceTurnOnAppSee = response.getAppSee().getForceTurnOnAppSee();
-            editor.putBoolean("force_turn_on_app_see", forceTurnOnAppSee);
-
-            if (response.getPerson() != null) {
-                int personID = response.getPerson().getID();
-                editor.putInt("person_id", personID);
-
-                if (personID == 0) {
-                    Crashlytics.log("User saved with Person ID 0 in Splash");
-                    Crashlytics.log("User device id:" + installPref.getUserId());
-                    Crashlytics.log("User experience setting:" + experience);
-                    Crashlytics.logException(new Exception("UserZeroIdException"));
-                }
             }
 
             editor.apply();

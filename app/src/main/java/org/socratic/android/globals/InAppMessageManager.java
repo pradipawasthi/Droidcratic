@@ -1,9 +1,9 @@
 package org.socratic.android.globals;
 
-import org.socratic.android.InAppMessageDismissedPostRequest;
 import org.socratic.android.api.CanceledException;
-import org.socratic.android.api.InAppMessageSeenPostRequest;
-import org.socratic.android.api.InAppMessageTappedPostRequest;
+import org.socratic.android.api.request.InAppMessageDismissedPostRequest;
+import org.socratic.android.api.request.InAppMessageSeenPostRequest;
+import org.socratic.android.api.request.InAppMessageTappedPostRequest;
 import org.socratic.android.api.response.InAppMessageDismissedResponse;
 import org.socratic.android.api.response.InAppMessageSeenResponse;
 import org.socratic.android.api.response.InAppMessageTappedResponse;
@@ -57,8 +57,8 @@ public class InAppMessageManager {
 
             @Override
             public void onFinished() {}
-            });
-        }
+        });
+    }
 
     public void postInAppMessageDismissed(String id) {
         InAppMessageDismissedPostRequest request = new InAppMessageDismissedPostRequest(id);
@@ -83,8 +83,8 @@ public class InAppMessageManager {
 
             @Override
             public void onFinished() {}
-               });
-           }
+        });
+    }
 
     public void postInAppMessageTapped(String id) {
         InAppMessageTappedPostRequest request = new InAppMessageTappedPostRequest(id);
@@ -102,13 +102,13 @@ public class InAppMessageManager {
                 String.valueOf(statusCode);
             }
 
-           @Override
-           public void onSuccess(Response response, InAppMessageTappedResponse responseParsed) {
-               mResponseInAppMessageTapped = responseParsed;
-           }
+            @Override
+            public void onSuccess(Response response, InAppMessageTappedResponse responseParsed) {
+                mResponseInAppMessageTapped = responseParsed;
+            }
 
-           @Override
-           public void onFinished() {}
+            @Override
+            public void onFinished() {}
 
         });
     }

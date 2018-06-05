@@ -13,15 +13,12 @@ import com.google.gson.Gson;
 import org.socratic.android.dagger.qualifiers.Storage;
 import org.socratic.android.dagger.scopes.PerApplication;
 import org.socratic.android.globals.BingPredictionsManager;
-import org.socratic.android.globals.ChatListManager;
 import org.socratic.android.globals.HttpManager;
 import org.socratic.android.globals.InAppMessageManager;
 import org.socratic.android.globals.InitManager;
-import org.socratic.android.globals.MessagesManager;
 import org.socratic.android.globals.OcrSearchManager;
 import org.socratic.android.globals.PhotoManager;
 import org.socratic.android.globals.TextSearchManager;
-import org.socratic.android.globals.TokenManager;
 import org.socratic.android.storage.DiskStorage;
 import org.socratic.android.storage.InstallPref;
 
@@ -48,9 +45,6 @@ public interface AppComponent {
     TextSearchManager textSearchManager();
     BingPredictionsManager bingPredictionsManager();
     InitManager initManager();
-    ChatListManager chatListManager();
-    MessagesManager messagesManager();
-    TokenManager tokenManager();
     InAppMessageManager inAppMessageManager();
     Gson gson();
     @Storage SharedPreferences diskPreferences();

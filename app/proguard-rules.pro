@@ -86,22 +86,13 @@
 -keepclassmembers class org.socratic.android.analytics.CameraPermissionAnalytics$** {
     <fields>;
 }
--keepclassmembers class org.socratic.android.analytics.ContactsPermissionAnalytics$** {
-    <fields>;
-}
 -keepclassmembers class org.socratic.android.analytics.Event$** {
     <fields>;
 }
 -keepclassmembers class org.socratic.android.analytics.OCRAnalytics$** {
     <fields>;
 }
--keepclassmembers class org.socratic.android.analytics.OnboardingAnalytics$** {
-    <fields>;
-}
 -keepclassmembers class org.socratic.android.analytics.ResultsAnalytics$** {
-    <fields>;
-}
--keepclassmembers class org.socratic.android.analytics.ChatAnalytics$** {
     <fields>;
 }
 -keep public enum org.socratic.android.analytics.AnalyticsManager$EventPropertyOptions$** {
@@ -129,13 +120,6 @@
 ##---------------Begin: proguard configuation for Animation  ----------
 -keep class org.socratic.android.views.AnimatableRectF { *; }
 ##---------------End: proguard configuation for Animation  ----------
-
-##---------------Begin: proguard configuation for Appsee  ----------
--keep class com.appsee.** { *; }
--dontwarn com.appsee.**
--keep class android.support.** { *; }
--keep interface android.support.** { *; }
--keepattributes SourceFile,LineNumberTable
 
 -dontwarn com.squareup.okhttp.**
 

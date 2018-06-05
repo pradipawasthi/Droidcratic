@@ -25,7 +25,7 @@ import org.socratic.android.BuildConfig;
 import org.socratic.android.R;
 import org.socratic.android.SocraticApp;
 import org.socratic.android.analytics.AppReviewAnalytics;
-import org.socratic.android.api.RatingPostRequest;
+import org.socratic.android.api.request.RatingPostRequest;
 import org.socratic.android.api.response.BaseResponse;
 import org.socratic.android.databinding.ViewSocraticRatingBinding;
 import org.socratic.android.analytics.AnalyticsManager;

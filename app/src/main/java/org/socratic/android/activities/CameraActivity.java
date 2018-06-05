@@ -46,15 +46,11 @@ import org.socratic.android.R;
 
 import org.socratic.android.contract.CameraContract;
 import org.socratic.android.events.NavTouchEvent;
-import org.socratic.android.fragments.ChatFragment;
-import org.socratic.android.views.AdvancedViewPager;
 import org.socratic.android.views.VerticalSlidingDrawer;
 import org.socratic.android.adapter.InputControllerPagerAdapter;
 import org.socratic.android.adapter.InputPagerAdapter;
-import org.socratic.android.adapter.NavPagerAdapter;
 
 import org.socratic.android.analytics.AnalyticsManager;
-import org.socratic.android.analytics.OnboardingAnalytics;
 import org.socratic.android.databinding.ActivityCameraBinding;
 import org.socratic.android.events.TouchEvent;
 import org.socratic.android.fragments.TextSearchFragment;
@@ -73,8 +69,6 @@ import javax.inject.Inject;
 
 import static org.socratic.android.adapter.InputPagerAdapter.CAMERA_SCREEN;
 import static org.socratic.android.adapter.InputPagerAdapter.TEXT_SEARCH_SCREEN;
-import static org.socratic.android.adapter.NavPagerAdapter.NAV_CAMERA;
-import static org.socratic.android.adapter.NavPagerAdapter.NAV_CHAT;
 
 /**
  * @date 2017-02-02
@@ -100,27 +94,22 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
     View fillerView;
     RelativeLayout noConnectivityContainer;
     ViewPager inputViewPager;
-    AdvancedViewPager navViewPager;
     VerticalSlidingDrawer invitationsDrawer;
     NavTabsView navControlView;
     ImageView handleImage;
     PagerClickTitleStrip inputTitleStrip;
     ViewPager inputController;
     TextView addFriendsFTUE;
-    ImageView chatButton;
     View anchorView;
 
     CameraHelper mCameraHelper;
     TextSearchFragment textSearchFragment;
-    ChatFragment chatFragment;
 
     private int mTouchSlop;
-    private int currentInputPage, currentNavPage;
+    private int currentInputPage;
     private int scale;
     private int startX, startY;
     private boolean firstTimeUser;
-    private boolean isChatOn;
-    private boolean isSocialUser;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -129,7 +118,6 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
      * loaded fragment in memory.
      */
     private InputPagerAdapter inputPagerAdapter;
-    private NavPagerAdapter navPagerAdapter;
     private InputControllerPagerAdapter inputControllerPagerAdapter;
 
     @SuppressLint("ClickableViewAccessibility")
@@ -142,17 +130,6 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
 
         MultiLog.d(TAG, "Camera screen created.");
 
-        String experience = sharedPreferences.getString("experience", "forced");
-        isSocialUser = experience.equals("forced");
-        boolean cameFromOnboarding = sharedPreferences.getBoolean("cameFromOnboarding", true);
-
-        if (isSocialUser && cameFromOnboarding) {
-            analyticsManager.track(
-                    new OnboardingAnalytics.SocialOnboardingComplete());
-
-            sharedPreferences.edit().putBoolean("cameFromOnboarding", false).apply();
-        }
-
         baseView = binding.baseView;
         viewContainer = binding.viewContainer;
         //temporarily using findViewById, will have to figure out DataBinding solution
@@ -160,14 +137,12 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
         fillerView = binding.fillerView;
         inputViewPager = binding.inputViewPager;
         noConnectivityContainer = binding.noConnectivityContainer;
-        navViewPager = binding.navViewPager;
         invitationsDrawer = binding.invitationsDrawer;
         navControlView = binding.navControlView;
         handleImage = binding.handleImage;
         inputTitleStrip = binding.inputTitleStrip;
         inputController = binding.inputController;
         addFriendsFTUE = binding.friendsFtueText;
-        chatButton = (ImageView) binding.navControlView.findViewById(R.id.chat_btn);
         anchorView = binding.anchorView;
 
         Bundle bundle = getIntent().getExtras();
@@ -176,11 +151,7 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
         btnTakePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (navViewPager.getCurrentItem() == 1) {
-                    startTakePicture();
-                } else {
-                    navViewPager.setCurrentItem(1, true);
-                }
+                startTakePicture();
             }
         });
 
@@ -195,87 +166,12 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
 
         firstTimeUser = sharedPreferences.getBoolean("firstTime", true);
 
-        initializeNavigation();
         initializeInputMethods();
         initializeInvitationsDrawer();
 
         binding.inAppMessageView.setup(TAG);
 
         setupOnboardTips();
-    }
-
-    private void initializeNavigation() {
-
-        isChatOn = sharedPreferences.getBoolean("is_drawer_on", true);
-
-        if (!isChatOn) {
-            navViewPager.setPagingEnabled(false);
-            navControlView.hideSocialButtons();
-        }
-
-        // Create the messagesListAdapter that will return chat and group sections
-        navPagerAdapter = new NavPagerAdapter(getSupportFragmentManager(), isSocialUser);
-
-        navViewPager.setOffscreenPageLimit(2);
-        navViewPager.setAdapter(navPagerAdapter);
-
-        navViewPager.setCurrentItem(NAV_CAMERA);
-
-        navViewPager.setIgnoreTouchView(inputController);
-
-        navViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                if (position == NAV_CHAT) {
-                    invitationsDrawer.setVisibility(View.GONE);
-                    inputController.setVisibility(View.GONE);
-                    inputViewPager.setVisibility(View.GONE);
-                } else {
-
-                    if (!firstTimeUser && isChatOn) {
-                        inputController.setVisibility(View.VISIBLE);
-                        inputViewPager.setVisibility(View.VISIBLE);
-                    }
-
-                    invitationsDrawer.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                currentNavPage = position;
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-                //lock invitations drawer when navigation view pager is moving
-                if (state == ViewPager.SCROLL_STATE_DRAGGING) {
-                    invitationsDrawer.lock();
-                //unlock invitations drawer once navigation view pager is no longer moving
-                } else if (state == ViewPager.SCROLL_STATE_IDLE) {
-                    invitationsDrawer.unlock();
-
-                    if (currentNavPage == NAV_CHAT && isSocialUser) {
-                        if (chatFragment != null) {
-                            chatFragment.fireChatListAnalytics();
-                        } else {
-                            if (navViewPager.getCurrentItem() == NAV_CHAT) {
-                                chatFragment = (ChatFragment) navPagerAdapter.instantiateItem(navViewPager, navViewPager.getCurrentItem());
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        navControlView.setViewPager(navViewPager);
-
-        chatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navViewPager.setCurrentItem(0, true);
-            }
-        });
     }
 
     private void initializeInputMethods() {
@@ -355,10 +251,8 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
 
                 if (position == CAMERA_SCREEN) {
                     invitationsDrawer.setVisibility(View.VISIBLE);
-                    navViewPager.setVisibility(View.VISIBLE);
                 } else {
                     invitationsDrawer.setVisibility(View.GONE);
-                    navViewPager.setVisibility(View.GONE);
                 }
             }
 
@@ -434,8 +328,6 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
             inputPagerAdapter.setLocked(true);
             handleImage.setVisibility(View.GONE);
             inputController.setVisibility(View.GONE);
-            navViewPager.setPagingEnabled(false);
-            navControlView.hideSocialButtons();
         }
 
         if (successfulQueries >= SHOW_ADD_FRIENDS_NUM && !addFriendsShown) {
@@ -548,12 +440,8 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
             MultiLog.d(TAG, "Camera permission missing on resume, sending user back to splash "
                     + "permissions screen.");
 
-            Intent intent;
-            if (isSocialUser) {
-                intent = new Intent(this, SplashPermissionsActivity.class);
-            } else {
-                intent = new Intent(this, DefaultPermissionActivity.class);
-            }
+            Intent intent = new Intent(this, DefaultPermissionActivity.class);
+
 
             startActivity(intent);
             finish();
@@ -574,15 +462,6 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
         MultiLog.d(TAG, "Camera screen paused.");
 
         mCameraHelper.onPause();
-    }
-
-    public void returnToCameraScreen() {
-        navViewPager.setCurrentItem(1);
-    }
-
-    public void openInviteDrawer() {
-        navViewPager.setCurrentItem(1);
-        invitationsDrawer.open();
     }
 
     private void startTakePicture() {
@@ -643,13 +522,6 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
     };
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    public void handleNavTouchEvent(NavTouchEvent event) {
-        MotionEvent motionEvent = event.getMotionEvent();
-
-        navViewPager.dispatchTouchEvent(motionEvent);
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(TouchEvent event) {
         MotionEvent motionEvent = event.getMotionEvent();
 
@@ -700,16 +572,11 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
     }
 
     private void hideElements() {
-        navViewPager.setPagingEnabled(false);
         navControlView.setVisibility(View.GONE);
         inputController.setVisibility(View.GONE);
     }
 
     private void showElements() {
-        if (!invitationsDrawer.isOpened() && !firstTimeUser && isChatOn) {
-            navViewPager.setPagingEnabled(true);
-        }
-
         if (!invitationsDrawer.isOpened()) {
             navControlView.setVisibility(View.VISIBLE);
         }

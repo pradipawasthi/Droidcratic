@@ -18,7 +18,7 @@ import android.widget.TextView;
 import org.socratic.android.R;
 import org.socratic.android.SocraticApp;
 import org.socratic.android.analytics.ResultsAnalytics;
-import org.socratic.android.api.BasicGetRequest;
+import org.socratic.android.api.request.BasicGetRequest;
 import org.socratic.android.api.model.HeaderCard;
 import org.socratic.android.api.model.HeaderBarBaseCard;
 import org.socratic.android.api.model.ScriptResponseCard;

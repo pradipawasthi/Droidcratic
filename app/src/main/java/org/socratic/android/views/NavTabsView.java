@@ -29,7 +29,6 @@ public class NavTabsView extends RelativeLayout implements ViewPager.OnPageChang
     private ArgbEvaluator colorEvaluator;
 
     private float centerButtonTranslationY;
-    private float sideButtonsTranslation;
 
     public NavTabsView(Context context) {
         this(context, null);
@@ -60,7 +59,6 @@ public class NavTabsView extends RelativeLayout implements ViewPager.OnPageChang
             @Override
             public void onGlobalLayout() {
                 centerButtonTranslationY = (getHeight() / 2) - (getHeight() / 16);
-                sideButtonsTranslation = getHeight() / 8;
 
                 binding.circleBtn.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
@@ -80,8 +78,6 @@ public class NavTabsView extends RelativeLayout implements ViewPager.OnPageChang
         final Rect groupFrame = new Rect();
 
         binding.circleBtn.getHitRect(circleFrame);
-        binding.chatBtn.getHitRect(chatFrame);
-        binding.groupsBtn.getHitRect(groupFrame);
 
         return !(circleFrame.contains((int) x, (int) y)
                 || chatFrame.contains((int) x, (int) y)
@@ -93,8 +89,8 @@ public class NavTabsView extends RelativeLayout implements ViewPager.OnPageChang
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         if (position == 0) {
             setUpViews(1 - positionOffset,
-                        .7f + (positionOffset * .3f),
-                        (1 - positionOffset) * centerButtonTranslationY);
+                    .7f + (positionOffset * .3f),
+                    (1 - positionOffset) * centerButtonTranslationY);
         }
     }
 
@@ -114,26 +110,11 @@ public class NavTabsView extends RelativeLayout implements ViewPager.OnPageChang
     }
 
     private void setUpViews(float fractionFromCenter, float centerScale, float centerTransY) {
-        binding.chatBtn.setTranslationX(-sideButtonsTranslation * fractionFromCenter);
-        binding.chatBtn.setTranslationY(centerTransY);
-
         binding.circleBtn.setScaleX(centerScale);
         binding.circleBtn.setScaleY(centerScale);
         binding.circleBtn.setTranslationY(centerTransY);
 
         int color = (int) colorEvaluator.evaluate(fractionFromCenter, centerColor, sideColor);
         binding.circleBtn.setColorFilter(color);
-        binding.chatBtn.setColorFilter(color);
-    }
-
-    public void setViewPager(ViewPager viewPager) {
-        if (viewPager != null) {
-            viewPager.addOnPageChangeListener(this);
-        }
-    }
-
-    public void hideSocialButtons() {
-        binding.chatBtn.setVisibility(GONE);
-        binding.groupsBtn.setVisibility(GONE);
     }
 }

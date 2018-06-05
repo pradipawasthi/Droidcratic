@@ -3,7 +3,7 @@ package org.socratic.android.globals;
 import org.greenrobot.eventbus.EventBus;
 import org.socratic.android.api.CanceledException;
 import org.socratic.android.api.response.InitResponse;
-import org.socratic.android.api.InitGetRequest;
+import org.socratic.android.api.request.InitGetRequest;
 import org.socratic.android.events.InitEvent;
 import org.socratic.android.util.MultiLog;
 

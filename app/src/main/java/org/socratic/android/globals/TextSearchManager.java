@@ -5,7 +5,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.socratic.android.analytics.AnalyticsManager;
 import org.socratic.android.analytics.OCRAnalytics;
 import org.socratic.android.api.CanceledException;
-import org.socratic.android.api.SearchGetRequest;
+import org.socratic.android.api.request.SearchGetRequest;
 import org.socratic.android.api.model.CardResponse;
 import org.socratic.android.api.model.MetaData;
 import org.socratic.android.api.model.SearchResults;

@@ -8,20 +8,16 @@ import com.google.gson.GsonBuilder;
 
 import org.socratic.android.BuildConfig;
 import org.socratic.android.analytics.AnalyticsManager;
-import org.socratic.android.api.BaseRequest;
+import org.socratic.android.api.request.BaseRequest;
 import org.socratic.android.dagger.qualifiers.AppContext;
 import org.socratic.android.dagger.scopes.PerApplication;
 
-import org.socratic.android.analytics.AnalyticsManager;
 import org.socratic.android.globals.BingPredictionsManager;
-import org.socratic.android.globals.ChatListManager;
 import org.socratic.android.globals.HttpManager;
 import org.socratic.android.globals.InAppMessageManager;
 import org.socratic.android.globals.InitManager;
-import org.socratic.android.globals.MessagesManager;
 import org.socratic.android.globals.OcrSearchManager;
 import org.socratic.android.globals.TextSearchManager;
-import org.socratic.android.globals.TokenManager;
 import org.socratic.android.storage.InstallPref;
 
 import java.io.IOException;
@@ -56,24 +52,6 @@ public class NetworkModule {
     @PerApplication
     InitManager provideInitManager(HttpManager httpManager) {
         return new InitManager(httpManager);
-    }
-
-    @Provides
-    @PerApplication
-    ChatListManager provideChatListManager(HttpManager httpManager) {
-        return new ChatListManager(httpManager);
-    }
-
-    @Provides
-    @PerApplication
-    TokenManager provideTokenManager(HttpManager httpManager) {
-        return new TokenManager(httpManager);
-    }
-
-    @Provides
-    @PerApplication
-    MessagesManager provideMessagesManager(HttpManager httpManager) {
-        return new MessagesManager(httpManager);
     }
 
     @Provides
