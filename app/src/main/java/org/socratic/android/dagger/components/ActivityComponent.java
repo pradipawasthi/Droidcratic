@@ -5,7 +5,7 @@ import android.content.Context;
 import org.socratic.android.activities.CameraActivity;
 import org.socratic.android.activities.CropperActivity;
 import org.socratic.android.activities.DefaultPermissionActivity;
-import org.socratic.android.activities.InAppMessageWebViewActivity;
+import org.socratic.android.activities.InAppWebViewActivity;
 import org.socratic.android.activities.ResultsActivity;
 import org.socratic.android.activities.SearchInterstitialActivity;
 import org.socratic.android.activities.SearchProgressActivity;
@@ -34,7 +34,7 @@ public interface ActivityComponent extends AppComponent {
     void inject(SearchInterstitialActivity activity);
     void inject(SearchProgressActivity activity);
     void inject(SplashActivity activity);
-    void inject(InAppMessageWebViewActivity activity);
+    void inject(InAppWebViewActivity activity);
     void inject(DefaultPermissionActivity activity);
     void inject(SettingsActivity activity);
 }

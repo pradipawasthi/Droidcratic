@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 
 import org.socratic.android.R;
 import org.socratic.android.SocraticApp;
-import org.socratic.android.activities.InAppMessageWebViewActivity;
+import org.socratic.android.activities.InAppWebViewActivity;
 import org.socratic.android.databinding.ViewInAppMessageBinding;
 import org.socratic.android.globals.InAppMessageManager;
 import org.socratic.android.storage.DiskStorage;
@@ -158,8 +158,9 @@ public class InAppMessageView extends LinearLayout {
         btn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), InAppMessageWebViewActivity.class);
+                Intent intent = new Intent (v.getContext(), InAppWebViewActivity.class);
                 intent.putExtra("caller", previousActivity);
+                intent.putExtra("from_in_app_message", true);
                 getContext().startActivity(intent);
 
                 editor.putBoolean("in_app_message_exists_for_user", false).apply();

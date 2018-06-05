@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/invitations"
@@ -66,6 +66,7 @@
 
         <RelativeLayout
             android:id="@+id/copy_link"
+            android:layout_below="@+id/snap_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -107,7 +108,7 @@
                 fontPath="fonts/cerapro-regular.otf"
                 android:text="@string/copy_link_copy"
                 android:textColor="@color/whiteTransparentText"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <ImageView
                 android:id="@+id/copy_link_nav_ico"
@@ -124,6 +125,7 @@
 
         <RelativeLayout
             android:id="@+id/facebook_messenger"
+            android:layout_below="@+id/copy_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -166,7 +168,7 @@
                 fontPath="fonts/cerapro-regular.otf"
                 android:text="@string/facebook_messenger_copy"
                 android:textColor="@color/whiteTransparentText"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <ImageView
                 android:id="@+id/messenger_nav_ico"
@@ -188,6 +190,7 @@
 
         <RelativeLayout
             android:id="@+id/messages"
+            android:layout_below="@+id/facebook_messenger"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -229,7 +232,7 @@
                 fontPath="fonts/cerapro-regular.otf"
                 android:text="@string/messages_copy"
                 android:textColor="@color/whiteTransparentText"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <ImageView
                 android:id="@+id/messages_nav_ico"
@@ -251,6 +254,7 @@
 
         <RelativeLayout
             android:id="@+id/more"
+            android:layout_below="@+id/messages"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -292,7 +296,7 @@
                 fontPath="fonts/cerapro-regular.otf"
                 android:text="@string/more_copy"
                 android:textColor="@color/whiteTransparentText"
-                android:textSize="15sp" />
+                android:textSize="14sp" />
 
             <ImageView
                 android:id="@+id/more_nav_ico"
@@ -312,6 +316,37 @@
 
         </RelativeLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/tos_text_view"
+                android:text="@string/terms_of_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/padding_medium"
+                android:layout_marginEnd="@dimen/padding_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="•"/>
+
+            <TextView
+                android:id="@+id/privacy_policy_text_view"
+                android:text="@string/privacy_policy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding_medium"
+                android:layout_marginStart="@dimen/padding_medium" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 </layout>

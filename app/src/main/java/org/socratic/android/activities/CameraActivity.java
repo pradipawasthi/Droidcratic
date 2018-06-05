@@ -442,7 +442,6 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
 
             Intent intent = new Intent(this, DefaultPermissionActivity.class);
 
-
             startActivity(intent);
             finish();
         }
@@ -489,7 +488,7 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
             // Crop the image to the max crop rect and start uploading immediately.
             photoManager.setPhoto(CameraActivity.this, bitmap,
                     binding.cropWidget.getWidth(), binding.cropWidget.getHeight(),
-                    mCameraHelper.getPreviewTransformInfo(),    
+                    mCameraHelper.getPreviewTransformInfo(),
                     BuildConfig.WRITE_DEBUG_IMAGE_CAPTURE_TO_DISK);
 
             // Send user to new activity where they can manipulate the crop rectangle.
@@ -646,6 +645,22 @@ public class CameraActivity extends BaseActivity<ActivityCameraBinding, CameraCo
     @Override
     public void onSettingsClick() {
         Intent intent = new Intent(CameraActivity.this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTermsTextClick() {
+        Intent intent = new Intent (CameraActivity.this, InAppWebViewActivity.class);
+        intent.putExtra("caller", TAG);
+        intent.putExtra("url", getString(R.string.terms_url));
+        startActivity(intent);
+    }
+
+    @Override
+    public void onPrivacyTextClick() {
+        Intent intent = new Intent (CameraActivity.this, InAppWebViewActivity.class);
+        intent.putExtra("caller", TAG);
+        intent.putExtra("url", getString(R.string.privacy_url));
         startActivity(intent);
     }
 

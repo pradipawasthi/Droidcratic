@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
@@ -22,16 +21,17 @@ import javax.inject.Inject;
  * Created by jessicaweinberg on 7/18/17.
  */
 
-public class InAppMessageWebViewActivity extends BaseActivity<ActivityInAppMessageWebViewBinding, NoOpViewModel>
-    implements ViewAdapter {
-    private static final String TAG = InAppMessageWebViewActivity.class.getSimpleName();
+public class InAppWebViewActivity extends BaseActivity<ActivityInAppMessageWebViewBinding, NoOpViewModel>
+        implements ViewAdapter {
+    private static final String TAG = InAppWebViewActivity.class.getSimpleName();
 
-    WebView inAppMessageWebView;
+    WebView webView;
 
     @Inject SharedPreferences sharedPreferences;
 
     String callerName;
     Class callerClass;
+    String defaultUrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,19 +39,21 @@ public class InAppMessageWebViewActivity extends BaseActivity<ActivityInAppMessa
         activityComponent().inject(this);
         setAndBindContentView(savedInstanceState, R.layout.activity_in_app_message_web_view);
 
-        inAppMessageWebView = binding.inAppMessageWebView;
+        webView = binding.webView;
 
         overridePendingTransition(R.anim.in_app_message_web_view_slide_up, 0);
 
-        String messageUrl = sharedPreferences.getString("message_url", "");
+        defaultUrl = getString(R.string.default_url);
 
-        if (messageUrl != "") {
-            inAppMessageWebView.loadUrl(messageUrl);
+        boolean isFromInAppMessage = getIntent().getBooleanExtra("from_in_app_message", false);
+
+        if (isFromInAppMessage) {
+            setupInAppMessageWebView();
         } else {
-            inAppMessageWebView.loadUrl("http://www.socratic.org");
+            setupRegularWebView(getIntent());
         }
 
-        inAppMessageWebView.setWebViewClient(new WebViewClient() {
+        webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 view.loadUrl(url);
@@ -75,6 +77,26 @@ public class InAppMessageWebViewActivity extends BaseActivity<ActivityInAppMessa
             Log.d(TAG, "Caller class is null");
         }
 
+    }
+
+    private void setupRegularWebView(Intent intent) {
+        String url = intent.getStringExtra("url");
+
+        if (url != null && !url.isEmpty()) {
+            webView.loadUrl(url);
+        } else {
+            webView.loadUrl(defaultUrl);
+        }
+    }
+
+    private void setupInAppMessageWebView() {
+        String messageUrl = sharedPreferences.getString("message_url", "");
+
+        if (messageUrl != "") {
+            webView.loadUrl(messageUrl);
+        } else {
+            webView.loadUrl(defaultUrl);
+        }
     }
 
     private void setOnClick(final ImageButton btn, final Class previousActivityClass){

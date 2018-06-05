@@ -50,6 +50,8 @@ public class InvitationsView extends LinearLayout {
     TextView moreText;
 
     ImageButton settingsButton;
+    TextView termsText;
+    TextView privacyText;
 
     String facebookShareURL;
     String copyLinkShareURL;
@@ -67,6 +69,8 @@ public class InvitationsView extends LinearLayout {
         void onMessagesClick(String messagesShareURL);
         void onMoreClick(String moreShareURL);
         void onSettingsClick();
+        void onTermsTextClick();
+        void onPrivacyTextClick();
     }
 
     private InvitationsClickListener invitationsClickListener;
@@ -103,6 +107,8 @@ public class InvitationsView extends LinearLayout {
         moreText = binding.moreTextView;
 
         settingsButton = binding.settingsButton;
+        termsText = binding.tosTextView;
+        privacyText = binding.privacyPolicyTextView;
 
         socraticURL = BuildConfig.API_HOST;
 
@@ -147,6 +153,20 @@ public class InvitationsView extends LinearLayout {
             @Override
             public void onClick(View v) {
                 invitationsClickListener.onSettingsClick();
+            }
+        });
+
+        termsText.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                invitationsClickListener.onTermsTextClick();
+            }
+        });
+
+        privacyText.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                invitationsClickListener.onPrivacyTextClick();
             }
         });
     }
