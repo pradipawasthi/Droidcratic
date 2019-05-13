@@ -14,22 +14,22 @@ public class MultiLog {
 
     public static void d(String tag, String msg) {
         Log.d(tag, msg);
-        Crashlytics.log(msg);
+//        Crashlytics.log(msg);
     }
 
     public static void e(String tag, String msg) {
         Log.e(tag, msg);
-        Crashlytics.log(msg);
+//        Crashlytics.log(msg);
     }
 
     public static void e(String tag, String msg, Throwable th) {
         Log.e(tag, msg, th);
-        Crashlytics.log(msg);
-        Crashlytics.logException(th);
+//        Crashlytics.log(msg);
+//        Crashlytics.logException(th);
     }
 
     public static void e(String tag, Throwable th) {
         Log.e(tag, "", th);
-        Crashlytics.logException(th);
+//        Crashlytics.logException(th);
     }
 }

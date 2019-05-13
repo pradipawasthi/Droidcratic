@@ -1,6 +1,7 @@
 package org.socratic.android.viewmodel;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
 
@@ -48,10 +49,10 @@ public class ChatViewModel extends BaseViewModel<ChatContract.View> implements C
     public void getChatList() {
 
         if (personID == 0) {
-            Crashlytics.log("User with Person ID 0 called get chat");
-            Crashlytics.log("User device id:" + installPref.getUserId());
-            Crashlytics.log("User experience setting:" + sharedPreferences.getString("experience", ""));
-            Crashlytics.logException(new Exception("UserZeroIdException"));
+            Log.d("logPersonId","User with Person ID 0 called get chat");
+//            Crashlytics.log("User device id:" + installPref.getUserId());
+//            Crashlytics.log("User experience setting:" + sharedPreferences.getString("experience", ""));
+//            Crashlytics.logException(new Exception("UserZeroIdException"));
         }
 
         if (!chatListManager.isGetChatListRunning()) {

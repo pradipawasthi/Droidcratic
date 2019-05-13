@@ -129,24 +129,26 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashCo
     public void navigateToNextScreen() {
         Intent intent = null;
 
-        //check if user needs to go through onboarding
-        String experience = sharedPreferences.getString("experience", "forced");
+//        //check if user needs to go through onboarding
+//        String experience = sharedPreferences.getString("experience", "forced");
+//
+//        if (experience.equals("forced")) {
+//            intent = checkReturningUserState();
+//        } else {
+//            SharedPreferences.Editor editor = sharedPreferences.edit();
+//            long millis = System.currentTimeMillis();
+//            long currentTimeTS = millis / 1000;
+//            editor.putLong("app_opened_timestamp", currentTimeTS).apply();
+//            intent = new Intent(this, CameraActivity.class);
+//        }
+//
+//        if (!diskStorage.getLoggedFirstOpen()) {
+//            analyticsManager.setUserProperties(false);
+//        } else {
+//            analyticsManager.setUserSessionCount(diskStorage.getSessionCount());
+//        }
 
-        if (experience.equals("forced")) {
-            intent = checkReturningUserState();
-        } else {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            long millis = System.currentTimeMillis();
-            long currentTimeTS = millis / 1000;
-            editor.putLong("app_opened_timestamp", currentTimeTS).apply();
-            intent = new Intent(this, CameraActivity.class);
-        }
-
-        if (!diskStorage.getLoggedFirstOpen()) {
-            analyticsManager.setUserProperties(false);
-        } else {
-            analyticsManager.setUserSessionCount(diskStorage.getSessionCount());
-        }
+        intent = new Intent(this, CameraActivity.class);
 
         startActivity(intent);
         finish();

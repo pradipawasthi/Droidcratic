@@ -58,12 +58,12 @@ public class SocraticApp extends Application {
                 .appModule(new AppModule(this))
                 .build();
 
-        Fabric.with(this, new Crashlytics());
+//        Fabric.with(this, new Crashlytics());
 
         appComponent.diskStorage().setupDefaults();
         appComponent.installPref().loadFromDisk();
 
-        Crashlytics.setUserIdentifier(appComponent.installPref().getUserId());
+//        Crashlytics.setUserIdentifier(appComponent.installPref().getUserId());
 
         appComponent.httpManager().initHeaderDefaults();
 
