@@ -11,7 +11,7 @@ import okhttp3.Request;
 
 public abstract class SocraticBaseRequest extends BaseRequest {
 
-    private String mHost = BuildConfig.API_BASE;
+    private String mHost = "https://socratic.org";
 
     public String getUrl() {
         StringBuilder builder = new StringBuilder();

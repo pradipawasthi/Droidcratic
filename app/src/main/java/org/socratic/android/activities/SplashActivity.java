@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import com.facebook.accountkit.AccessToken;
-import com.facebook.accountkit.AccountKit;
 
 import org.socratic.android.BuildConfig;
 import org.socratic.android.R;
@@ -85,7 +83,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashCo
         // Record all sessions for a user if appsee has already been on for that user.
         if (appseeOn) {
             Log.d(TAG, "Appsee is enabled for this user and currently on.");
-            Appsee.start(BuildConfig.APPSEE_API_KEY);
+//            Appsee.start(BuildConfig.APPSEE_API_KEY);
             return;
         }
 
@@ -113,7 +111,7 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashCo
 
             Log.d(TAG, "Target number has been hit. Turning on and enabling appsee for user.");
 
-            Appsee.start(BuildConfig.APPSEE_API_KEY);
+//            Appsee.start(BuildConfig.APPSEE_API_KEY);
             sharedPreferences.edit().putBoolean("appsee_on", true).apply();
             sharedPreferences.edit().putBoolean("appsee_disabled", false).apply();
             return;
@@ -166,11 +164,11 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding, SplashCo
         } else if (atIdentity) {
             intent = new Intent(this, IdentityActivity.class);
         } else {
-            AccessToken accessToken = AccountKit.getCurrentAccessToken();
-            if (accessToken != null) {
-                //handle returning user
-                intent = checkPermissions();
-            }
+//            AccessToken accessToken = AccountKit.getCurrentAccessToken();
+//            if (accessToken != null) {
+//                //handle returning user
+//                intent = checkPermissions();
+//            }
         }
 
         return intent;

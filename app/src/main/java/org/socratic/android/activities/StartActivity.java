@@ -16,11 +16,7 @@ import android.widget.RelativeLayout;
 
 import com.appsee.Appsee;
 
-import com.facebook.accountkit.AccessToken;
-import com.facebook.accountkit.AccountKitLoginResult;
-import com.facebook.accountkit.ui.AccountKitActivity;
-import com.facebook.accountkit.ui.AccountKitConfiguration;
-import com.facebook.accountkit.ui.LoginType;
+
 
 import org.socratic.android.R;
 import org.socratic.android.contract.ViewAdapter;
@@ -35,7 +31,8 @@ import javax.inject.Inject;
 
 public class StartActivity extends BaseActivity<ActivityStartBinding, NoOpViewModel> implements ViewAdapter {
 
-    @Inject AnalyticsManager analyticsManager;
+    @Inject
+    AnalyticsManager analyticsManager;
 
     private static final int[] rainmojis = new int[]{
             R.drawable.banana_rain,
@@ -63,40 +60,42 @@ public class StartActivity extends BaseActivity<ActivityStartBinding, NoOpViewMo
             @Override
             public void onClick(View v) {
 
-                analyticsManager.track(
-                        new OnboardingAnalytics.SignUpScreenButtonTapped());
-
-                Appsee.addEvent("signupScreenButtonTapped");
-
-                loginBySMS();
+//                analyticsManager.track(
+//                        new OnboardingAnalytics.SignUpScreenButtonTapped());
+//
+//                Appsee.addEvent("signupScreenButtonTapped");
+//
+//                loginBySMS();
+                Intent intent = new Intent(getApplicationContext(), IdentityActivity.class);
+            startActivity(intent);
             }
         });
 
-        ViewGroup container = (ViewGroup)findViewById(R.id.emoji_container);
+        ViewGroup container = (ViewGroup) findViewById(R.id.emoji_container);
         View contentView = findViewById(R.id.content_container);
 
         Display display = getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics ();
+        DisplayMetrics outMetrics = new DisplayMetrics();
         display.getMetrics(outMetrics);
 
         // want everything to be consistently in pixels, not dp
         int screenHeight = Math.round(outMetrics.heightPixels);
-        int screenWidth  = Math.round(outMetrics.widthPixels);
+        int screenWidth = Math.round(outMetrics.widthPixels);
 
-        float density  = getResources().getDisplayMetrics().density;
-        int spaceBetween = 150 * (int)density;
-        int emojiSize = 50 * (int)density;
+        float density = getResources().getDisplayMetrics().density;
+        int spaceBetween = 150 * (int) density;
+        int emojiSize = 50 * (int) density;
 
-        float rowSpeedDifference = 2f/3f;
+        float rowSpeedDifference = 2f / 3f;
         float durationMultiplier = 10000f;
 
         // set up the positions
         ArrayList<Point> positions = new ArrayList<Point>();
-        for (int j = 0; j <= screenHeight/spaceBetween; j++) {
-            for (int i = 0; i <= screenWidth/spaceBetween; i++) {
-                int x = i*spaceBetween;
-                int y = j*spaceBetween;
-                positions.add(new Point(x,y));
+        for (int j = 0; j <= screenHeight / spaceBetween; j++) {
+            for (int i = 0; i <= screenWidth / spaceBetween; i++) {
+                int x = i * spaceBetween;
+                int y = j * spaceBetween;
+                positions.add(new Point(x, y));
             }
         }
 
@@ -224,21 +223,21 @@ public class StartActivity extends BaseActivity<ActivityStartBinding, NoOpViewMo
     }
 
     private void loginBySMS() {
-        final Intent intent = new Intent(this, AccountKitActivity.class);
-        AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
-                new AccountKitConfiguration.AccountKitConfigurationBuilder(
-                        LoginType.PHONE,
-                        AccountKitActivity.ResponseType.TOKEN);
-
-        intent.putExtra(
-                AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION,
-                configurationBuilder.build());
-        startActivityForResult(intent, APP_REQUEST_CODE);
-
-        analyticsManager.track(
-                new OnboardingAnalytics.PhoneNumberScreenVisited());
-      
-        Appsee.addEvent("phoneNumberScreenVisited");
+//        final Intent intent = new Intent(this, AccountKitActivity.class);
+//        AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
+//                new AccountKitConfiguration.AccountKitConfigurationBuilder(
+//                        LoginType.PHONE,
+//                        AccountKitActivity.ResponseType.TOKEN);
+//
+//        intent.putExtra(
+//                AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION,
+//                configurationBuilder.build());
+//        startActivityForResult(intent, APP_REQUEST_CODE);
+//
+//        analyticsManager.track(
+//                new OnboardingAnalytics.PhoneNumberScreenVisited());
+//
+//        Appsee.addEvent("phoneNumberScreenVisited");
     }
 
     @Override
@@ -246,38 +245,39 @@ public class StartActivity extends BaseActivity<ActivityStartBinding, NoOpViewMo
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == APP_REQUEST_CODE) {
-            AccountKitLoginResult loginResult = data.getParcelableExtra(AccountKitLoginResult.RESULT_KEY);
-
-            //handle error state
-            if (loginResult.getError() != null) {
-                OnboardingAnalytics.accountKitPhoneLoginError event
-                        = new OnboardingAnalytics.accountKitPhoneLoginError();
-                event.message = loginResult.getError().getErrorType().getMessage();
-                analyticsManager.track(event);
-            //handle cancelled state
-            } else if (loginResult.wasCancelled()) {
-                analyticsManager.track(
-                        new OnboardingAnalytics.accountKitPhoneLoginCancel());
-            } else {
-                analyticsManager.track(
-                        new OnboardingAnalytics.PhoneAuthenticationDidComplete());
-
-                Appsee.addEvent("phoneAuthenticationDidComplete");
-
-                handleLoginSuccess(loginResult);
-            }
-        }
-    }
-
-    private void handleLoginSuccess(AccountKitLoginResult loginResult) {
-        final AccessToken accessToken = loginResult.getAccessToken();
-        if (accessToken != null) {
-            Intent intent = new Intent(this, IdentityActivity.class);
-            startActivity(intent);
-        } else {
-            //handle unknown response type
+////            AccountKitLoginResult loginResult = data.getParcelableExtra(AccountKitLoginResult.RESULT_KEY);
+//
+//            //handle error state
+//            if (loginResult.getError() != null) {
+//                OnboardingAnalytics.accountKitPhoneLoginError event
+//                        = new OnboardingAnalytics.accountKitPhoneLoginError();
+//                event.message = loginResult.getError().getErrorType().getMessage();
+//                analyticsManager.track(event);
+//            //handle cancelled state
+//            } else if (loginResult.wasCancelled()) {
+//                analyticsManager.track(
+//                        new OnboardingAnalytics.accountKitPhoneLoginCancel());
+//            } else {
+//                analyticsManager.track(
+//                        new OnboardingAnalytics.PhoneAuthenticationDidComplete());
+//
+//                Appsee.addEvent("phoneAuthenticationDidComplete");
+//
+//                handleLoginSuccess(loginResult);
+//            }
+//        }
         }
 
-        finish();
+//    private void handleLoginSuccess(AccountKitLoginResult loginResult) {
+//        final AccessToken accessToken = loginResult.getAccessToken();
+//        if (accessToken != null) {
+//            Intent intent = new Intent(this, IdentityActivity.class);
+//            startActivity(intent);
+//        } else {
+//            //handle unknown response type
+//        }
+//
+//        finish();
+//    }
     }
 }

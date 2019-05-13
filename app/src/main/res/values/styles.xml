@@ -102,15 +102,15 @@
         <item name="android:windowBackground">@color/cropDialog</item>
     </style>
 
-    <style name="AppLoginTheme" parent="Theme.AccountKit">
-        <item name="com_accountkit_background_color">@color/onboarding_bg</item>
-        <item name="com_accountkit_input_text_color">@color/purpleRatingBackground</item>
-        <item name="com_accountkit_text_color">@android:color/black</item>
-        <item name="com_accountkit_button_background_color">@color/purple_btn_color_off</item>
-        <item name="com_accountkit_button_pressed_background_color">@color/purple_btn_color_on</item>
-        <item name="com_accountkit_button_disabled_background_color">@color/purple_btn_color_off</item>
-        <item name="com_accountkit_input_background_color">@color/onboarding_bg</item>
-        <item name="com_accountkit_input_border_color">@color/web_card_font_color</item>
-        <item name="com_accountkit_button_disabled_text_color">@android:color/white</item>
-    </style>
+    <!--<style name="AppLoginTheme" >-->
+        <!--<item name="com_accountkit_background_color">@color/onboarding_bg</item>-->
+        <!--<item name="com_accountkit_input_text_color">@color/purpleRatingBackground</item>-->
+        <!--<item name="com_accountkit_text_color">@android:color/black</item>-->
+        <!--<item name="com_accountkit_button_background_color">@color/purple_btn_color_off</item>-->
+        <!--<item name="com_accountkit_button_pressed_background_color">@color/purple_btn_color_on</item>-->
+        <!--<item name="com_accountkit_button_disabled_background_color">@color/purple_btn_color_off</item>-->
+        <!--<item name="com_accountkit_input_background_color">@color/onboarding_bg</item>-->
+        <!--<item name="com_accountkit_input_border_color">@color/web_card_font_color</item>-->
+        <!--<item name="com_accountkit_button_disabled_text_color">@android:color/white</item>-->
+    <!--</style>-->
 </resources>
